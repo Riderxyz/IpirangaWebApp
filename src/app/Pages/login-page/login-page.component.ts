@@ -1,5 +1,8 @@
+import { HeaderComponent } from './../../Components/header/header.component';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -15,6 +18,6 @@ Credencials = { usuario: null,senha:null };
   alerta() {
     //alert('asas')
     //this.router.navigateByUrl('/home')
-    console.log(this.Credencials.usuario)
+    console.log(this.Credencials)
   }
 }

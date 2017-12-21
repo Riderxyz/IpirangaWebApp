@@ -1,22 +1,48 @@
 
 //background-image: url('http://mundialnegocios.com.br/upload/galeria/grd/97_79104313.jpg');
 //background-color: red;
-
-.Centro{
-    text-align: center;
+$Azul:#1879bf;
+.Centro {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 30%;
 }
 
-.borda{
-    border-radius: 50px;
-    border-style: solid
+.borda {
+  //border-radius: 50px;
+  border-style: solid;
+};
+
+h2 {
+  font-family: "Book Antiqua";
+  font-style: italic;
+  color: $Azul
 }
 
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15%;
+.fundo {
+  // background:#d3e5f3;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #d3e5f3;
+  height: 100%;
+  width: 100%;
+  //margin-bottom: 50%;
 }
-//.background{}
 
+.example-card {
+  width: 300px;
+  height: 100%;
+}
 
+.container {
+  // display: flex;
+  justify-content: center;
+  //align-items: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+
+  //background:#d3e5f3
+}
+//background:#d3e5f3

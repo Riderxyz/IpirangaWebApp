@@ -1,10 +1,11 @@
-<div class="">
-  <div class="container">
+<div class="fundo">
+  <app-header></app-header>
+<!--   <div class="container">
     <div class="Centro">
       <div class="card borda" style="width: 20rem;">
         <div class="card-body">
           <h4 class="card-title">Login</h4>
-          <input type="text" class="form-control" [(ngmodel)]="Credencials.usuario" id="exampleInputUsuario1" placeholder="Usuario">
+          <input type="text" class="form-control" [(ngModel)]="Credencials.usuario" id="exampleInputUsuario1" placeholder="Usuario">
           <br>
           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
           <br>
@@ -12,5 +13,19 @@
         </div>
       </div>
     </div>
+  </div> -->
+  <div class="Centro">
+    <mat-card class="example-card container">
+        <h2>VIP Especialistas</h2>
+      <mat-form-field floatLabel='true'>
+        <input matInput [(ngModel)]="Credencials.usuario" placeholder="Usuario">
+      </mat-form-field>
+
+      <mat-form-field floatLabel='true'>
+        <input matInput [(ngModel)]="Credencials.senha" placeholder="Senha" type="password">
+      </mat-form-field>
+      <br>
+      <button class="btn btn-outline-primary rounded" (click)="alerta()">Entrar</button>
+        </mat-card>
   </div>
 </div>
