@@ -1,10 +1,48 @@
-<div class="row fundo">
+<!-- <div class="row fundo">
   <div class="col-md-5">
     <div style="padding-left:5%;">
       <img src="./assets/icones/Logo_Ipiranga.png" alt="" style="height:40px;">
     </div>
   </div>
-  <div class="col-md-7">
-   
-  </div>
-</div>
+</div> -->
+
+
+<mat-toolbar class="fundo">
+  <mat-toolbar-row>
+    <div class="col-4">
+      <div style="padding-left:5%;">
+        <img src="./assets/icones/Logo_Ipiranga.png" alt="" style="height:40px;">
+      </div>
+    </div>
+    <div class="col-4">
+      <div>
+        {{titulo}}
+      </div>
+    </div>
+    <div class="col-4" style="text-align:right">
+      <div style="text-align:right">
+        <mat-list>
+          <mat-list-item>
+            <h3 matLine> Patricia </h3>
+            <p matLine (click)="Sair()">
+            Sair
+            </p>
+          </mat-list-item>
+          </mat-list>
+          
+      </div>
+    </div>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- <div style="text-align:right">
+  <mat-list>
+    <mat-list-item >
+      <h3 matLine> asas </h3>
+      <button class="btn btn-outline-primary" style="
+      width: 8%;
+  " (click)="Sair()" matLine>Sair</button>
+    </mat-list-item>
+  </mat-list>
+</div> -->

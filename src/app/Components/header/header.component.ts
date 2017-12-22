@@ -1,3 +1,4 @@
+import { CacheSrvService } from './../../Services/CacheSrv/cache-srv.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+titulo:any
+  constructor(public cacheSrv:CacheSrvService) { 
+    this.cacheSrv.FuncaoChamada$.subscribe(
+      () => {
+        this.titulo = this.cacheSrv.TituloObj.Header;
+      }
+    );
+    console.log(this.titulo);
+    
+  }
 
   ngOnInit() {
   }
+
+Sair(){
+  alert('asas')
+}
+
+
 
 }

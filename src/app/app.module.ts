@@ -8,16 +8,23 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   import { MainPageComponent } from './Pages/main-page/main-page.component';
   import { HistoryPageComponent } from './Pages/history-page/history-page.component';
   import { LoginPageComponent } from './Pages/login-page/login-page.component';
+  import { FilterPageComponent } from './Pages/filter-page/filter-page.component';  
 //Serviços↓
   import { CacheSrvService } from './Services/CacheSrv/cache-srv.service';
   import { AmazonSrvService } from './Services/AmazonSrv/amazon-srv.service'; 
 //Componentes↓
   import { HeaderComponent } from './Components/header/header.component';
+  import { TabsComponent } from './Components/tabs/tabs.component';
+
+//AngularMaterial↓
+  import { MatToolbarModule } from '@angular/material/toolbar';
   import { MatInputModule } from '@angular/material/input';
   import { MatFormFieldModule } from '@angular/material/form-field';
+  import { MatListModule } from '@angular/material/list';
   import { MatSlideToggleModule } from '@angular/material/slide-toggle';
   import { MatTabsModule } from '@angular/material/tabs';
   import { MatCardModule } from '@angular/material/card';
+  import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -25,7 +32,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MainPageComponent,
     HistoryPageComponent,
     HeaderComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    FilterPageComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,8 +42,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatInputModule,
     MatFormFieldModule,
     MatSlideToggleModule,
+    MatToolbarModule,
     MatTabsModule,
+    MatListModule,
     MatCardModule,
+    MatIconModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: '', redirectTo: 'login', pathMatch: 'full' },
