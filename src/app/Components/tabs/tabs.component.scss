@@ -11,3 +11,7 @@
   ::ng-deep .mat-tab-labels{
     justify-content: center; /* align items in Main Axis */
 }
+::ng-deep .mat-tab-label{
+  width: 100%;
+  border-style: solid;
+}

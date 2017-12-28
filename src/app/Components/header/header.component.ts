@@ -9,20 +9,24 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 titulo:any
   constructor(public cacheSrv:CacheSrvService) { 
+    this.titulo = this.cacheSrv.GetTitulo()
     this.cacheSrv.FuncaoChamada$.subscribe(
       () => {
-        this.titulo = this.cacheSrv.TituloObj.Header;
+        console.log(this.cacheSrv.TituloObj.Header);   
+        //this.titulo = this.cacheSrv.TituloObj.Header;
+        //this.Sair()
       }
     );
-    console.log(this.titulo);
-    
+    console.log(this.titulo); 
   }
 
   ngOnInit() {
   }
 
 Sair(){
-  alert('asas')
+  console.log(this.cacheSrv.TituloObj.Header);
+  //this.titulo = this.cacheSrv.TituloObj.Header;
+  console.log(this.titulo)
 }
 
 

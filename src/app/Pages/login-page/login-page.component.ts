@@ -18,12 +18,9 @@ Credencials = { usuario: null,senha:null };
     
   }
   alerta() {
-    this.cacheSrv.TituloObj.Header = 'Omega Max'
-    
-    //alert('asas')
-    this.router.navigateByUrl('/home')
-    console.log(this.Credencials)
-    console.log(this.cacheSrv.TituloObj.Header)
+    this.cacheSrv.SetTitulo('Vip Especialistas')
+   // this.cacheSrv.TituloObj.Header = 'Omega Max'
     this.cacheSrv.ChamarFuncao();
-  }
+    this.router.navigateByUrl('/home')
+  }  
 }
