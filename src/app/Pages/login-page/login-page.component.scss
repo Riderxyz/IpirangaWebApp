@@ -3,27 +3,12 @@
 //background-color: red;
 $Azul:#1879bf;
 .Centro {
-  text-align: center;
+  //text-align: center;
   margin-top: 5%;
   margin-bottom: 30%;
   display: flex;
   justify-content: center;
 }
-
-.borda {
-  //border-radius: 50px;
-  border-style: solid;
-};
-
-h2 {
-  font-family: "Book Antiqua";
-  font-style: italic;
-  color: $Azul
-}
-.Headerh2{
-  background-color: red
-}
-
 .fundo {
   // background:#d3e5f3;
   background-position: center center;
@@ -32,8 +17,25 @@ h2 {
   background-size: cover;
   background-color: #d3e5f3;
   height: 100%;
+  min-height: 100vh;
   width: 100%;
   //margin-bottom: 50%;
+}
+
+h2 {
+  font-family: "Book Antiqua";
+  font-style: italic;
+  color: $Azul
+}
+.Headerlogin{
+  text-align: center;
+  font-weight: bold;
+  background-color: #d8d8d8
+}
+.footer{
+position: fixed;
+bottom: 0;
+width: 100%;
 }
 .inputLogin{
   border-radius: 7px;
@@ -57,6 +59,11 @@ h2 {
   flex-grow: 0
 }
 
+.labelLogin{
+  font-weight: bold
+}
+
+
 .btn-primary{
-  background-color: red
+  background-color: rgb(4,162,255), hexa #04a2ff rgb(0,148,236), hexa #0094ec
 }

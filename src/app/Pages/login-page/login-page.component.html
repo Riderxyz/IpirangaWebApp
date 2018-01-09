@@ -1,36 +1,36 @@
 <div class="fundo">
   <app-header></app-header>
   <div>
-   
     <br>
     <div class="Centro">
-        
-        <div class="card text-center">
-            <div class="card-header">
-                <h3>Entre com o seu usuario e senha</h3>
-            </div>
-            <div class="card-body">
-              <div class="form-group row">
-                  <label for="staticEmail" class="col col-form-label">Usuario</label>
-                  <div class="col">
-                    <input type="text" class="form-control" id="staticEmail" value="email@example.com">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="inputPassword" class="col col-form-label">Senha</label>
-                  <div class="col">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                  </div>
-                </div>
-                <button href="#" class="btn btn-primary">Go somewhere</button>
+      <div class="card" style="width: 20%;">
+        <div class="card-header Headerlogin">
+          <span>Entre com o seu usuario e senha</span>
+        </div>
+        <div class="card-body">
+          <div class="form-group row">
+            <label for="staticEmail" class="col-3 col-form-label labelLogin" style="padding-right: 0px;">Usuário</label>
+            <div class="col-9" style="padding-left: 0px;">
+              <input type="text" [(ngModel)]="Credencials.usuario" class="form-control" id="staticEmail">
             </div>
           </div>
-
-
+          <div class="form-group row">
+            <label for="inputPassword" class="col-3 col-form-label labelLogin" style="padding-right: 0px;">Senha</label>
+            <div class="col-9" style="padding-left: 0px;">
+              <input type="password" [(ngModel)]="Credencials.senha" class="form-control" id="staticEmail">
+            </div>
+          </div>
+          <div class="text-center">
+            <button (click)="Login()" class="btn btn-primary">Autenticar</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="footer">
+    <app-footer></app-footer>
+  </div>
 </div>
-
 <!-- <mat-card class="example-card container" style="width: 30%;">
     <mat-card-header>
   <h3>Entre com o seu usuario e senha</h3>

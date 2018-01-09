@@ -15,6 +15,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 //Componentes↓
   import { HeaderComponent } from './Components/header/header.component';
   import { TabsComponent } from './Components/tabs/tabs.component';
+  import { FooterComponent } from './Components/footer/footer.component';
 
 //AngularMaterial↓
   import { MatToolbarModule } from '@angular/material/toolbar';
@@ -25,6 +26,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   import { MatTabsModule } from '@angular/material/tabs';
   import { MatCardModule } from '@angular/material/card';
   import { MatIconModule } from '@angular/material/icon';
+  
+  
+
 
 @NgModule({
   declarations: [
@@ -34,7 +38,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HeaderComponent,
     LoginPageComponent,
     FilterPageComponent,
-    TabsComponent
+    TabsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
