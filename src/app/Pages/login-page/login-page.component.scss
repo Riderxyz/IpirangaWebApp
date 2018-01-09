@@ -8,6 +8,15 @@ $Azul: #1879bf;
   justify-content: center;
 }
 
+.card-body {
+  font-size: 13px;
+}
+
+button {
+  font-size: 13px;
+  size: 20px;
+}
+
 .fundo {
   // background:#d3e5f3;
   background-position: center;
@@ -22,8 +31,8 @@ $Azul: #1879bf;
 }
 .Headerlogin {
   text-align: center;
-  font-weight: bold;
   background-color: #d8d8d8;
+  font-size: 13px;
 }
 
 .footer {
