@@ -1,13 +1,14 @@
-.fundo{
-    background-color: #f6d43c;
-    height: 50px;
-    box-shadow:0px 7px 6px 0px #313131
+.fundo {
+  //background-color: #f6d43c;
+  height: 50px;
+  box-shadow: 0 7px 6px 0 #313131;
 }
 
-.example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
-.link:hover{
-    color: #1879bf
+.imageIpiranga {
+  height: 7.2vh;
+  margin-top: 2.3vh;
+}
+
+.link:hover {
+  color: #1879bf;
 }
