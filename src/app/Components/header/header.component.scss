@@ -6,9 +6,20 @@
 
 .imageIpiranga {
   height: 7.2vh;
-  margin-top: 2.3vh;
+  margin-top: 2.2vh;
 }
 
-.link:hover {
-  color: #1879bf;
+.titleHeader {
+  position: absolute;
+  left: 10vh;
+  top: 0;
+
+  h3 {
+    color: blue;
+  };
+
+  p {
+
+    font-size: 1em;
+  }
 }

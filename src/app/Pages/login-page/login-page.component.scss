@@ -1,17 +1,16 @@
+$Azul: #1879bf;
 
-//background-image: url('http://mundialnegocios.com.br/upload/galeria/grd/97_79104313.jpg');
-//background-color: red;
-$Azul:#1879bf;
 .Centro {
   //text-align: center;
   margin-top: 5%;
-  margin-bottom: 30%;
+  //margin-bottom: 30%;
   display: flex;
   justify-content: center;
 }
+
 .fundo {
   // background:#d3e5f3;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -21,49 +20,44 @@ $Azul:#1879bf;
   width: 100%;
   //margin-bottom: 50%;
 }
-
-h2 {
-  font-family: "Book Antiqua";
-  font-style: italic;
-  color: $Azul
-}
-.Headerlogin{
+.Headerlogin {
   text-align: center;
   font-weight: bold;
-  background-color: #d8d8d8
+  background-color: #d8d8d8;
 }
-.footer{
-position: fixed;
-bottom: 0;
-width: 100%;
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
-.inputLogin{
+
+.inputLogin {
   border-radius: 7px;
   border-style: solid;
   border-width: 1px;
 }
-
 
 .flex-container {
   display: flex;
   background-color: white;
   width: 30%;
   justify-content: center;
-  
+
 }
-.flex-container>div {
-  //background-color: #f1f1f1;
+
+.flex-container > div {
   margin: 10px;
-  padding:20px;
+  padding: 20px;
   font-size: 30px;
-  flex-grow: 0
+  flex-grow: 0;
 }
 
-.labelLogin{
-  font-weight: bold
+.labelLogin {
+  font-weight: bold;
 }
 
-
-.btn-primary{
-  background-color: rgb(4,162,255), hexa #04a2ff rgb(0,148,236), hexa #0094ec
+.btn-primary {
+  //background-color: rgb(4,162,255), hexa #04a2ff rgb(0,148,236), hexa #0094ec;
+  background-color: $Azul
 }
