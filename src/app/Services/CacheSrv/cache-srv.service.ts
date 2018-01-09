@@ -20,6 +20,8 @@ export class CacheSrvService {
   ChamarFuncao() {
     this.resultado.next();
   }
+
+
 SetTitulo(titulo){
   this.TituloObj.Header = titulo
 }

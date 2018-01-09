@@ -1,44 +1,47 @@
 <div class="fundo">
   <app-header></app-header>
-<!--   <div class="container">
+  <div>
+   
+    <br>
     <div class="Centro">
-      <div class="card borda" style="width: 20rem;">
-        <div class="card-body">
-          <h4 class="card-title">Login</h4>
-          <input type="text" class="form-control" [(ngModel)]="Credencials.usuario" id="exampleInputUsuario1" placeholder="Usuario">
-          <br>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
-          <br>
-          <button class="btn btn-primary" (click)="alerta()">Entrar</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
-  <div class="Centro">
-    <mat-card class="example-card container">
-        <h2>VIP Especialistas</h2>
-      <mat-form-field floatLabel='true'>
-        <input matInput [(ngModel)]="Credencials.usuario" placeholder="Usuario">
-      </mat-form-field>
+        
+        <div class="card text-center">
+            <div class="card-header">
+                <h3>Entre com o seu usuario e senha</h3>
+            </div>
+            <div class="card-body">
+              <div class="form-group row">
+                  <label for="staticEmail" class="col col-form-label">Usuario</label>
+                  <div class="col">
+                    <input type="text" class="form-control" id="staticEmail" value="email@example.com">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputPassword" class="col col-form-label">Senha</label>
+                  <div class="col">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                  </div>
+                </div>
+                <button href="#" class="btn btn-primary">Go somewhere</button>
+            </div>
+          </div>
 
-      <mat-form-field floatLabel='true'>
-        <input matInput [(ngModel)]="Credencials.senha" placeholder="Senha" type="password">
-      </mat-form-field>
-      <br>
-      <button class="btn btn-outline-primary rounded" (click)="alerta()">Entrar</button>
-        </mat-card>
+
+    </div>
   </div>
 </div>
 
-
-<!-- 
-<div style="text-align:right">
-  <mat-list>
-    <mat-list-item >
-      <h3 matLine> asas </h3>
-      <button class="btn btn-outline-primary" style="
-      width: 8%;
-  " (click)="Sair()" matLine>Sair</button>
-    </mat-list-item>
-  </mat-list>
-</div> -->
+<!-- <mat-card class="example-card container" style="width: 30%;">
+    <mat-card-header>
+  <h3>Entre com o seu usuario e senha</h3>
+  </mat-card-header>
+  <div>
+    <label>Usuario</label>
+    <input class="inputLogin">
+    <br>
+    <label>Senha</label>
+    <input class="inputLogin">
+    <br>
+  </div>
+  <button class="btn btn-outline-primary rounded" (click)="Login()">Entrar</button>
+</mat-card> -->

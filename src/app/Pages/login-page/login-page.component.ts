@@ -17,7 +17,7 @@ Credencials = { usuario: null,senha:null };
   ngOnInit() {
     
   }
-  alerta() {
+  Login() {
     this.cacheSrv.SetTitulo('Vip Especialistas')
    // this.cacheSrv.TituloObj.Header = 'Omega Max'
     this.cacheSrv.ChamarFuncao();

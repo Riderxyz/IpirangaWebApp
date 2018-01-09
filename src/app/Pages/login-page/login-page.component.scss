@@ -6,6 +6,8 @@ $Azul:#1879bf;
   text-align: center;
   margin-top: 5%;
   margin-bottom: 30%;
+  display: flex;
+  justify-content: center;
 }
 
 .borda {
@@ -17,6 +19,9 @@ h2 {
   font-family: "Book Antiqua";
   font-style: italic;
   color: $Azul
+}
+.Headerh2{
+  background-color: red
 }
 
 .fundo {
@@ -30,19 +35,28 @@ h2 {
   width: 100%;
   //margin-bottom: 50%;
 }
-
-.example-card {
-  width: 300px;
-  height: 100%;
+.inputLogin{
+  border-radius: 7px;
+  border-style: solid;
+  border-width: 1px;
 }
 
-.container {
-  // display: flex;
+
+.flex-container {
+  display: flex;
+  background-color: white;
+  width: 30%;
   justify-content: center;
-  //align-items: center;
-  padding-top: 5%;
-  padding-bottom: 5%;
-
-  //background:#d3e5f3
+  
 }
-//background:#d3e5f3
+.flex-container>div {
+  //background-color: #f1f1f1;
+  margin: 10px;
+  padding:20px;
+  font-size: 30px;
+  flex-grow: 0
+}
+
+.btn-primary{
+  background-color: red
+}
