@@ -1,8 +1,5 @@
-import { HeaderComponent } from './../../Components/header/header.component';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
-import { CacheSrvService } from '../../Services/CacheSrv/cache-srv.service';
-
 
 @Component({
   selector: 'app-login-page',
@@ -11,15 +8,24 @@ import { CacheSrvService } from '../../Services/CacheSrv/cache-srv.service';
 })
 export class LoginPageComponent implements OnInit {
 //credencials:any
-Credencials = { usuario: null,senha:null };
-  constructor(public router: Router, public cacheSrv:CacheSrvService) { }
+
+Credencials = {
+   usuario: null,
+   senha:null 
+  };
+
+
+  constructor(
+    private router: Router,
+    //private cacheSrv:CacheSrvService
+  ) {}
 
   ngOnInit() {
     
   }
   Login() {
-    this.cacheSrv.SetTitulo(this.Credencials.usuario)
-    this.cacheSrv.ChamarFuncao();
-    this.router.navigateByUrl('/home')
+    //this.cacheSrv.SetTitulo(this.Credencials.usuario)
+    //this.cacheSrv.ChamarFuncao();
+    //this.router.navigateByUrl('/home')
   }  
 }
