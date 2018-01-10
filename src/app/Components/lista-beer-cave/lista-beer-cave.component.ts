@@ -6,7 +6,16 @@ import { Component, OnInit, NgModule } from '@angular/core';
   styleUrls: ['./lista-beer-cave.component.scss']
 })
 export class ListaBeerCaveComponent implements OnInit {
-  nodes = [];
+  nodes = [
+    {
+      'id': 1,
+      'name': 'Jose',
+      'filhos': {
+        'id': 2,
+        'name': 'maria'
+      }
+    }
+  ];
   isAnimated = true;
   autoCollapse = true;
   expandOnClick = true;
