@@ -27,6 +27,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   import { MatCardModule } from '@angular/material/card';
   import { MatIconModule } from '@angular/material/icon';
   import { ListasComponent } from './Pages/listas/listas.component';
+  import { ListaJetOilComponent } from './Components/lista-jet-oil/lista-jet-oil.component';
 
 
 
@@ -41,7 +42,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     FilterPageComponent,
     TabsComponent,
     FooterComponent,
-    ListasComponent
+    ListasComponent,
+    ListaJetOilComponent
   ],
   imports: [
     BrowserModule,
@@ -79,6 +81,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
         path: 'listas', component:  ListasComponent, data: {
           breadcrumbs: true,
           text: 'listas'
+        }
+      },
+      {
+        path: 'ListaJetOil', component:  ListaJetOilComponent, data: {
+          breadcrumbs: true,
+          text: 'ListaJetOil'
         }
       }
     ]),
