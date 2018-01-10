@@ -25,7 +25,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   import { MatSlideToggleModule } from '@angular/material/slide-toggle';
   import { MatTabsModule } from '@angular/material/tabs';
   import { MatCardModule } from '@angular/material/card';
-  import { MatIconModule } from '@angular/material/icon';
+  import { MatIconModule } from '@angular/mater;
+import { ListasComponent } from './Pages/listas/listas.component'ial/icon';
   
   
 
@@ -39,7 +40,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     LoginPageComponent,
     FilterPageComponent,
     TabsComponent,
-    FooterComponent
+    Footer,
+    ListasComponentComponent
   ],
   imports: [
     BrowserModule,
