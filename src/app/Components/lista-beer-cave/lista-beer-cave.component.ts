@@ -8,12 +8,11 @@ import { Component, OnInit, NgModule } from '@angular/core';
 export class ListaBeerCaveComponent implements OnInit {
   nodes = [
     {
-      'id': 1,
-      'name': 'Jose',
-      'filhos': {
-        'id': 2,
-        'name': 'maria'
-      }
+      id: 1,
+      name: 'Jose',
+      children: [{
+        id: 2,name: 'maria'
+      }]
     }
   ];
   isAnimated = true;
