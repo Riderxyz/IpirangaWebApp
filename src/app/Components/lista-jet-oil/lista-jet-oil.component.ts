@@ -20,10 +20,10 @@ export class ListaJetOilComponent implements OnInit {
         {id: 14, name: '2017-Junho'},
         {id: 15, name: '2017-Julho',
           children: [
+            {id: 12, name: 'acesso_periodo_01052018_15052018    Gerado:15/05/2018-10:20h'},
+            {id: 13, name: 'acesso_periodo_16052018_31052018    Gerado:31/05/2018-18:15h'},
             {id: 14, name: 'acesso_periodo_01052018_15052018    Gerado:15/05/2018-10:20h'},
-            {id: 15, name: 'acesso_periodo_01052018_15052018    Gerado:15/05/2018-10:20h'},
-            {id: 16, name: 'acesso_periodo_01052018_15052018    Gerado:15/05/2018-10:20h'},
-            {id: 17, name: 'acesso_periodo_16052018_31052018    Gerado:31/05/2018-18:15h'}
+            {id: 15, name: 'acesso_periodo_16052018_31052018    Gerado:31/05/2018-18:15h'}
           ]
         }
       ]
