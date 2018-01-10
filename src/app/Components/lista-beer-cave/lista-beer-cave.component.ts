@@ -34,7 +34,7 @@ export class ListaBeerCaveComponent implements OnInit {
     {id: 6, name: '6. Quantidade de videos assistidos por dia e faixa de horário'},
     {id: 7, name: '7. Quantidade de visualizações por vídeo, identificando o responsável pela publicação'},
     {id: 8, name: '8. Quantidade de geral de acessos, independente da interação'},
-    {id: 9, titnameulo: '9. Quantidade de interações por dia e faixa de horário das publicações'}
+    {id: 9, name: '9. Quantidade de interações por dia e faixa de horário das publicações'}
   ];
   isAnimated = true;
   autoCollapse = true;
