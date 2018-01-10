@@ -28,7 +28,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   import { MatIconModule } from '@angular/material/icon';
   import { ListaJetOilComponent } from './Components/lista-jet-oil/lista-jet-oil.component';
   import { ListaPadariaComponent } from './Components/lista-padaria/lista-padaria.component';
-import { ListaBeerCaveComponent } from './Components/lista-beer-cave/lista-beer-cave.component';
+  import { ListaBeerCaveComponent } from './Components/lista-beer-cave/lista-beer-cave.component';
+
+//Angular tree
+  import { TreeModule } from 'angular-tree-component';
 
 
 
@@ -58,6 +61,7 @@ import { ListaBeerCaveComponent } from './Components/lista-beer-cave/lista-beer-
     MatListModule,
     MatCardModule,
     MatIconModule,
+    TreeModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: '', redirectTo: 'login', pathMatch: 'full' },
