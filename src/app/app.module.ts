@@ -28,6 +28,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   import { MatIconModule } from '@angular/material/icon';
   import { ListasComponent } from './Pages/listas/listas.component';
   import { ListaJetOilComponent } from './Components/lista-jet-oil/lista-jet-oil.component';
+  import { ListaPadariaComponent } from './Components/lista-padaria/lista-padaria.component';
 
 
 
@@ -43,7 +44,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     TabsComponent,
     FooterComponent,
     ListasComponent,
-    ListaJetOilComponent
+    ListaJetOilComponent,
+    ListaPadariaComponent
   ],
   imports: [
     BrowserModule,
@@ -87,6 +89,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
         path: 'ListaJetOil', component:  ListaJetOilComponent, data: {
           breadcrumbs: true,
           text: 'ListaJetOil'
+        }
+      },
+      {
+        path: 'ListaPadaria', component:  ListaPadariaComponent, data: {
+          breadcrumbs: true,
+          text: 'ListaPadaria'
         }
       }
     ]),
