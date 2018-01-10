@@ -13,11 +13,15 @@ titulo:any
     this.cacheSrv.FuncaoChamada$.subscribe(
       () => {
         console.log(this.cacheSrv.TituloObj.Header);   
-        //this.titulo = this.cacheSrv.TituloObj.Header;
+        this.titulo = this.cacheSrv.TituloObj.Header;
         //this.Sair()
       }
     );
     console.log(this.titulo); 
+
+    if (this.titulo == null) {
+      this.titulo = 'Teste';
+    }
   }
 
   ngOnInit() {
