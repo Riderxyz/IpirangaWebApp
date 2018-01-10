@@ -11,8 +11,8 @@
 
 .titleHeader {
   position: absolute;
-  left: 10.5vh;
-  top: 1.9vh;
+  left: 9.6vh;
+  top: 3.2vh;
 
   h1 {
     //font: 1.2em "Open Sans",arial,helvetica,sans-serif;
@@ -28,4 +28,21 @@
   p {
     font-size: 13px;
   }
+}
+.container{
+  position: absolute;
+}
+.titulo{
+text-align: center;
+flex-grow: 1;
+color: #333;
+font-family: Ubuntu,arial,helvetica,sans-serif;
+font-size: 1em;
+line-height: 1.2em;
+padding: 1em;
+text-transform: capitalize;
+text-align: center;
+display: table-cell;
+vertical-align: middle
+
 }
