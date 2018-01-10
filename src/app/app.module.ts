@@ -30,6 +30,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   import { ListaPadariaComponent } from './Components/lista-padaria/lista-padaria.component';
   import { ListaBeerCaveComponent } from './Components/lista-beer-cave/lista-beer-cave.component';
 
+
 //Angular tree
   import { TreeModule } from 'angular-tree-component';
 
