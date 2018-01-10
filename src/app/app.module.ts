@@ -26,9 +26,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   import { MatTabsModule } from '@angular/material/tabs';
   import { MatCardModule } from '@angular/material/card';
   import { MatIconModule } from '@angular/material/icon';
-  import { ListasComponent } from './Pages/listas/listas.component';
   import { ListaJetOilComponent } from './Components/lista-jet-oil/lista-jet-oil.component';
   import { ListaPadariaComponent } from './Components/lista-padaria/lista-padaria.component';
+import { ListaBeerCaveComponent } from './Components/lista-beer-cave/lista-beer-cave.component';
 
 
 
@@ -43,9 +43,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     FilterPageComponent,
     TabsComponent,
     FooterComponent,
-    ListasComponent,
     ListaJetOilComponent,
-    ListaPadariaComponent
+    ListaPadariaComponent,
+    ListaBeerCaveComponent
   ],
   imports: [
     BrowserModule,
@@ -80,12 +80,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
         }
       },
       {
-        path: 'listas', component:  ListasComponent, data: {
-          breadcrumbs: true,
-          text: 'listas'
-        }
-      },
-      {
         path: 'ListaJetOil', component:  ListaJetOilComponent, data: {
           breadcrumbs: true,
           text: 'ListaJetOil'
@@ -95,6 +89,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
         path: 'ListaPadaria', component:  ListaPadariaComponent, data: {
           breadcrumbs: true,
           text: 'ListaPadaria'
+        }
+      },
+      {
+        path: 'ListaBeerCave', component:  ListaBeerCaveComponent, data: {
+          breadcrumbs: true,
+          text: 'ListaBeerCave'
         }
       }
     ]),
