@@ -18,7 +18,7 @@ Credencials = { usuario: null,senha:null };
     
   }
   Login() {
-    this.cacheSrv.SetTitulo('Vip Especialistas')
+    this.cacheSrv.SetTitulo(this.Credencials.usuario)
     this.cacheSrv.ChamarFuncao();
     this.router.navigateByUrl('/home')
   }  
