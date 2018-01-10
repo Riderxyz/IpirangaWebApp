@@ -26,6 +26,6 @@ Credencials = {
   Login() {
     //this.cacheSrv.SetTitulo(this.Credencials.usuario)
     //this.cacheSrv.ChamarFuncao();
-    //this.router.navigateByUrl('/home')
+    this.router.navigateByUrl('/home')
   }  
 }
