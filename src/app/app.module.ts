@@ -8,10 +8,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   import { MainPageComponent } from './Pages/main-page/main-page.component';
   import { HistoryPageComponent } from './Pages/history-page/history-page.component';
   import { LoginPageComponent } from './Pages/login-page/login-page.component';
-  import { FilterPageComponent } from './Pages/filter-page/filter-page.component';  
+  import { FilterPageComponent } from './Pages/filter-page/filter-page.component';
 //Serviços↓
   import { CacheSrvService } from './Services/CacheSrv/cache-srv.service';
-  import { AmazonSrvService } from './Services/AmazonSrv/amazon-srv.service'; 
+  import { AmazonSrvService } from './Services/AmazonSrv/amazon-srv.service';
 //Componentes↓
   import { HeaderComponent } from './Components/header/header.component';
   import { TabsComponent } from './Components/tabs/tabs.component';
@@ -25,10 +25,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   import { MatSlideToggleModule } from '@angular/material/slide-toggle';
   import { MatTabsModule } from '@angular/material/tabs';
   import { MatCardModule } from '@angular/material/card';
-  import { MatIconModule } from '@angular/mater;
-import { ListasComponent } from './Pages/listas/listas.component'ial/icon';
-  
-  
+  import { MatIconModule } from '@angular/material/icon';
+  import { ListasComponent } from './Pages/listas/listas.component';
+
+
 
 
 @NgModule({
@@ -40,8 +40,8 @@ import { ListasComponent } from './Pages/listas/listas.component'ial/icon';
     LoginPageComponent,
     FilterPageComponent,
     TabsComponent,
-    Footer,
-    ListasComponentComponent
+    FooterComponent,
+    ListasComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +73,12 @@ import { ListasComponent } from './Pages/listas/listas.component'ial/icon';
         path: 'historico', component: HistoryPageComponent, data: {
           breadcrumbs: true,
           text: 'Histórico'
+        }
+      },
+      {
+        path: 'listas', component:  ListasComponent, data: {
+          breadcrumbs: true,
+          text: 'listas'
         }
       }
     ]),
