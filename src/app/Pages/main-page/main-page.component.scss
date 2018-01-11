@@ -13,7 +13,7 @@
     //align-items: center;
     padding-top: 5%;
     padding-bottom: 5%;
-  
+
     //background:#d3e5f3
   }
 
@@ -36,3 +36,9 @@
     width: 100%;
   }
 
+  .box {
+    background: #fff;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+ }
