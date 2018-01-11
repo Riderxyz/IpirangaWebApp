@@ -44,25 +44,18 @@ export class AmazonSrvService {
       .then(this.extractData)
       .catch(this.handleError);
   }
-  public extractData(res: Response) {
+
+
+
+  // metodos privados
+  private extractData(res: Response) {
     const body = res.json();
-    console.log(body);
-    console.log(body.user.Items[0].userType);
-    this.Jojo()
-    //this.cacheSrv.SetAuth(body.accessToken, body.user.Items[0].userType,body.clientId);
-    //this.cacheSrv.getAuth();
     return body || {};
   }
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);
   }
-
-
-Jojo(){
-  this.cacheSrv.SetTitulo('this.Credencials.usuario')
-}
-
 
 }
 
