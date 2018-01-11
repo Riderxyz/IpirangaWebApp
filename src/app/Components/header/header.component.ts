@@ -3,6 +3,8 @@ import { CacheSrvService } from './../../Services/CacheSrv/cache-srv.service';
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import swal from 'sweetalert2';
+import { delay } from 'q';
 
 @Component({
   selector: 'app-header',
@@ -36,12 +38,25 @@ export class HeaderComponent implements OnInit {
   }
 
   logoff() {
-    console.log('chamada para sair');
+    this.loading(true);
     this.storage.eraseSessionStorage(this.nameLocalStorageSessionLogin);
     this.router.navigate(['/home']);
   }
 
 
-
+  private loading(statusModal: any) {
+    if (statusModal) {
+      swal({
+        showConfirmButton: false,
+        showCancelButton: false,
+        allowEscapeKey: false,
+        allowOutsideClick: false
+      });
+      swal.showLoading();
+    } else {
+      swal.hideLoading();
+      swal.close();
+    }
+  }
 
 }
