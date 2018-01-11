@@ -23,16 +23,40 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   import { ListaPadariaComponent } from './Components/lista-padaria/lista-padaria.component';
   import { ListaBeerCaveComponent } from './Components/lista-beer-cave/lista-beer-cave.component';
 //AngularMaterial↓
-  import { MatToolbarModule } from '@angular/material/toolbar';
-  import { MatInputModule } from '@angular/material/input';
-  import { MatFormFieldModule } from '@angular/material/form-field';
-  import { MatListModule } from '@angular/material/list';
-  import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-  import { MatTabsModule } from '@angular/material/tabs';
-  import { MatCardModule } from '@angular/material/card';
-  import { MatIconModule } from '@angular/material/icon';
-  import { MatExpansionModule } from '@angular/material/expansion';
-  import { MatSelectModule } from '@angular/material/select';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatStepperModule,
+} from '@angular/material';
+import {CdkTableModule} from '@angular/cdk/table';
 //Angular tree↓
   import { TreeModule } from 'angular-tree-component';
   import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-component';
@@ -63,16 +87,38 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     FormsModule,
   //AngularMaterial
-    MatInputModule,
-    MatFormFieldModule,
-    MatSlideToggleModule,
-    MatToolbarModule,
-    MatTabsModule,
-    MatListModule,
-    MatCardModule,
-    MatIconModule,
-    MatExpansionModule,
-    MatSelectModule,
+  CdkTableModule,
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatStepperModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
   //Tree
     TreeModule,
   //Http
