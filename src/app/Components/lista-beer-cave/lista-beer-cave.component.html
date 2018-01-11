@@ -1,13 +1,12 @@
 <div class="beer">
   <!-- <tree-root [nodes]="opcao" [options]="options"></tree-root> -->
-  <h2>Lista de relatorios - teste</h2>
   <br/>
   <table>
-<tr>
-  <td>Relatorio</td>
-</tr>
-<tr *ngFor="let item of relatorioService">
-  <td>{{relatorioService.keys}}</td>
-</tr>
+    <tr>
+      <td align=left>Relatorio</td>
+    </tr>
+    <tr *ngFor="let item of relatorioService">
+      <td>{{relatorioService.toString}}</td>
+    </tr>
   </table>
 </div>
