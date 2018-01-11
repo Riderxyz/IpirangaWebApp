@@ -13,7 +13,7 @@ import swal from 'sweetalert2';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
-  //credencials:any
+//credencials:any
 
   nameLocalStorageSessionLogin = 'token_user';
 
@@ -21,8 +21,6 @@ export class LoginPageComponent implements OnInit {
     usuario: 'emersonl',
     senha: 'HalfLife2!'
   };
-
-
   constructor(
     private router: Router,
     private awsSrv: AmazonSrvService,
@@ -31,7 +29,7 @@ export class LoginPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+    
   }
   Login() {
     this.loading(true);
@@ -42,10 +40,7 @@ export class LoginPageComponent implements OnInit {
       .then((res) => {
         this.storage.writeSessionStorage(JSON.stringify(res), this.nameLocalStorageSessionLogin);
         if (this.storage.readSessionStorage(this.nameLocalStorageSessionLogin)) {
-          console.log('logado com sucesso');
-          this.router.navigateByUrl('/home')
-        } else {
-          console.log('deu merda');
+          this.router.navigate(['/home']);
         }
         this.loading(false);
       })

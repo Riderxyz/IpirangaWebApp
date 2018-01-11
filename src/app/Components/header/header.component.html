@@ -1,8 +1,29 @@
-<mat-toolbar class="fundo" (click)="Sair()">
+<mat-toolbar class="fundo">
   <mat-toolbar-row style="display:  flex;">
-   <div class="container">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4 col-xs-12  col-sm-12">
+          <div class="titleHeader">
+              <img src="./assets/icones/Logo_Ipiranga2.png" alt="">
+            <div class="txt">
+              <div class="title">RGE</div>
+              <div class="subtitle">Relatórios Gerenciais Especialistas</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12  col-sm-12 titulo">
+           <div *ngIf="ifLogged"> {{titulo}} <a sty href="#" (click)="logoff()" class="btn btn-link"><i class="fa fa-2x fa-sign-out"></i></a></div>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!--
+
+ <div class="container">
       <div style="padding-left:0%;">
-        <img src="./assets/icones/Logo_Ipiranga2.png" alt="" class="imageIpiranga">
+       
       </div>
     <div class="titleHeader">
       <h1>RGE</h1>
@@ -10,9 +31,16 @@
     </div>
     </div>
     <div class="titulo">
-
-        {{titulo}}
-
+        {{titulo}} <a sty href="#" (click)="logoff()" class="btn btn-link"><i class="fa fa-2x fa-sign-out"></i></a>
     </div>
-  </mat-toolbar-row>
-</mat-toolbar>
+
+     <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4 col-xs-12  col-sm-12">
+         
+        </div>
+        <div class="col-4 text-center"></div>
+        <div class="col-4 text-center  hidden-xs  col-sm-12">3</div>
+      </div>
+    </div>
+-->
