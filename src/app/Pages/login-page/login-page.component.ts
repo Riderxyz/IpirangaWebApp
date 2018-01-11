@@ -2,7 +2,6 @@ import { CacheSrvService } from './../../Services/CacheSrv/cache-srv.service';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { AmazonSrvService } from '../../Services/AmazonSrv/amazon-srv.service';
-AmazonSrvService
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -15,7 +14,6 @@ export class LoginPageComponent implements OnInit {
     usuario: 'emersonl',
     senha: 'HalfLife2!'
   };
-
 
   constructor(
     private router: Router,
