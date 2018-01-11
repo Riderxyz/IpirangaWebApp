@@ -14,8 +14,6 @@ Credencials = {
    usuario: 'emersonl',
    senha:'HalfLife2!' 
   };
-
-
   constructor(
     private router: Router,
     private awsSrv:AmazonSrvService,    
