@@ -1,11 +1,17 @@
+import { AmazonSrvService } from './../../Services/AmazonSrv/amazon-srv.service';
 import { Component, OnInit, NgModule } from '@angular/core';
 import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-component';
 @Component({
   selector: 'app-lista-beer-cave',
   templateUrl: './lista-beer-cave.component.html',
-  styleUrls: ['./lista-beer-cave.component.scss']
+  styleUrls: ['./lista-beer-cave.component.scss'],
+  providers: [AmazonSrvService]
 })
 export class ListaBeerCaveComponent implements OnInit {
+
+  relatorioService: any[];
+
+
   opcao = [
     {
       id: 1, name: '1. Quantidade de usuarios',
@@ -61,9 +67,14 @@ export class ListaBeerCaveComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor(private service: AmazonSrvService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.relatorioServiceExtrerno();
+  }
+
+  private relatorioServiceExtrerno():void{
+    trhis.ser
   }
 
 }

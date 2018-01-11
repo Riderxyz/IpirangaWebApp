@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Observable';
 export class CacheSrvService implements CanActivate {
   // UsuarioObj: any = { username: null };
   // DatabaseObj: any = { Destino: null, Executar: null };
-  private ifLogged = false; 
+  private ifLogged = false;
 
   TituloObj: any = { Header: null, notification: null };
   constructor(
@@ -32,7 +32,7 @@ export class CacheSrvService implements CanActivate {
     this.router.navigate(['/login']);
   }
 
-//ChamarFunção  
+//ChamarFunção
   // Observable string sources
   private resultado = new Subject<any>();
 
@@ -54,7 +54,7 @@ export class CacheSrvService implements CanActivate {
 
 
    ifAuth() {
-    return false;
+    return true;
   }
 
 
