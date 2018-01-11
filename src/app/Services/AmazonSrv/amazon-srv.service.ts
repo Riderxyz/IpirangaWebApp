@@ -45,9 +45,13 @@ VerificarLogin(username, senha) {
     "context": {
       "stage": "DEV"
     }
-
   }
 
+  return this.http.post(this.urlLoginService, this.data, this.getHeader())
+    .toPromise()
+    .then(this.extractData)
+    .catch(this.handleError);
+}
 
 
   // metodos privados
