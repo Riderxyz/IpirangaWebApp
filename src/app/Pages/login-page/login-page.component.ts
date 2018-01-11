@@ -31,6 +31,7 @@ Credencials = {
       console.log('Res: ', res);
       this.cacheSrv.SetAuth(res.accessToken, res.user.Items[0].userType, res.clientId);
       this.router.navigateByUrl('home');
+      this.cacheSrv.SetTitulo(this.Credencials.usuario)
     })
   
     //this.router.navigateByUrl('/home')
