@@ -12,11 +12,16 @@
           </mat-expansion-panel-header>
           <div style="text-align: start;">
           <mat-form-field>
-            <input matInput placeholder="First name">
+          <mat-select placeholder="Favorite food" name="food">
+                  <mat-option>None</mat-option>
+                  <mat-option value="option1">Option 1</mat-option>
+                  <mat-option value="option2">Option 2</mat-option>
+                  <mat-option value="option3">Option 3</mat-option>
+            </mat-select>
           </mat-form-field>
           <mat-form-field>
-            <input matInput placeholder="Age">
-          </mat-form-field>
+              <input matInput placeholder="First name">
+            </mat-form-field>
           </div>
         </mat-expansion-panel>
       </mat-accordion>

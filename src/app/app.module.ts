@@ -31,7 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   import { MatTabsModule } from '@angular/material/tabs';
   import { MatCardModule } from '@angular/material/card';
   import { MatIconModule } from '@angular/material/icon';
-  import { MatExpansionModule   } from '@angular/material/expansion';
+  import { MatExpansionModule } from '@angular/material/expansion';
+  import { MatSelectModule } from '@angular/material/select';
 //Angular tree↓
   import { TreeModule } from 'angular-tree-component';
   import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-component';
@@ -71,6 +72,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCardModule,
     MatIconModule,
     MatExpansionModule,
+    MatSelectModule,
   //Tree
     TreeModule,
   //Http
