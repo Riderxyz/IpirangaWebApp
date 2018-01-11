@@ -5,14 +5,9 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
-import { AmazonSrvService } from './../AmazonSrv/amazon-srv.service';
 
 @Injectable()
 export class CacheSrvService implements CanActivate {
-  // UsuarioObj: any = { username: null };
-  // DatabaseObj: any = { Destino: null, Executar: null };
-  private ifLogged = false;
-
   TituloObj: any = { Header: null, Notification: null };
   AuthObj: any = { Token: null, UserType: null, ClientId: null }
   FinalAuth: any
@@ -37,12 +32,17 @@ export class CacheSrvService implements CanActivate {
   GetTitulo() {
     return this.TituloObj.Header
   }
+
   //Autenticação↓
 
   SetAuth(token, usertype, client_id) {
     this.AuthObj.Token = token;
     this.AuthObj.UserType = usertype
     this.AuthObj.ClientId = client_id
+    if (this.AuthObj.Token != null) {
+        
+      this.ifAuth();
+    }
   }
 
   getAuth() {

@@ -11,6 +11,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Paginas↓
   import { AppRoutingModule } from './app.routing.module';
+  import { FilterPageComponent } from './Pages/filter-page/filter-page.component';
+  import { HistoryPageComponent } from './Pages/history-page/history-page.component';
+  import { MainPageComponent } from './Pages/main-page/main-page.component';
+  import { LoginPageComponent } from './Pages/login-page/login-page.component';
 //Serviços↓
   import { CacheSrvService } from './Services/CacheSrv/cache-srv.service';
   import { AmazonSrvService } from './Services/AmazonSrv/amazon-srv.service';
@@ -20,7 +24,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   import { HeaderComponent } from './Components/header/header.component';
   import { TabsComponent } from './Components/tabs/tabs.component';
   import { FooterComponent } from './Components/footer/footer.component';
-
+  import { ListaJetOilComponent } from './Components/lista-jet-oil/lista-jet-oil.component';
+  import { ListaPadariaComponent } from './Components/lista-padaria/lista-padaria.component';
+  import { ListaBeerCaveComponent } from './Components/lista-beer-cave/lista-beer-cave.component';
 //AngularMaterial↓
   import { MatToolbarModule } from '@angular/material/toolbar';
   import { MatInputModule } from '@angular/material/input';
@@ -30,11 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   import { MatTabsModule } from '@angular/material/tabs';
   import { MatCardModule } from '@angular/material/card';
   import { MatIconModule } from '@angular/material/icon';
-  import { ListaJetOilComponent } from './Components/lista-jet-oil/lista-jet-oil.component';
-  import { ListaPadariaComponent } from './Components/lista-padaria/lista-padaria.component';
-  import { ListaBeerCaveComponent } from './Components/lista-beer-cave/lista-beer-cave.component';
-
-
+  import { MatExpansionModule } from '@angular/material/expansion';
+  import { MatSelectModule } from '@angular/material/select';
 //Angular tree↓
   import { TreeModule } from 'angular-tree-component';
   import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-component';
@@ -64,6 +67,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     FormsModule,
+  //AngularMaterial
     MatInputModule,
     MatFormFieldModule,
     MatSlideToggleModule,
@@ -72,7 +76,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatListModule,
     MatCardModule,
     MatIconModule,
+    MatExpansionModule,
+    MatSelectModule,
+  //Tree
     TreeModule,
+  //Http
     BrowserAnimationsModule,
     HttpClientModule,
     HttpModule,
