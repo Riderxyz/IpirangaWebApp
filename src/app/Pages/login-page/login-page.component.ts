@@ -42,10 +42,7 @@ export class LoginPageComponent implements OnInit {
       .then((res) => {
         this.storage.writeSessionStorage(JSON.stringify(res), this.nameLocalStorageSessionLogin);
         if (this.storage.readSessionStorage(this.nameLocalStorageSessionLogin)) {
-          console.log('logado com sucesso');
-          this.router.navigateByUrl('/home')
-        } else {
-          console.log('deu merda');
+          this.router.navigate(['/home']);
         }
         this.loading(false);
       })
