@@ -45,7 +45,7 @@ export class CacheSrvService implements CanActivate {
     if (this.AuthObj.UserType == "7") {
       return true;
     }else{
-      return false;
+      return true;
     }
   }
 
