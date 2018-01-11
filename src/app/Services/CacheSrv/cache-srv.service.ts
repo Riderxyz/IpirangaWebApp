@@ -1,3 +1,4 @@
+import { StorageService } from './../storage.service';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
@@ -9,19 +10,21 @@ import { Observable } from 'rxjs/Observable';
 export class CacheSrvService implements CanActivate {
   TituloObj: any = { Header: null, Notification: null };
   AuthObj: any = { Token: null, UserType: null, ClientId: null }
-  constructor(private router: Router ) {
-  }
+  FinalAuth: any
+  constructor(
+    private router: Router,
+    private storage: StorageService
+  ) { }
   //Rotas↓
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    console.log('verifica se existe autorização');
     if (this.ifAuth()) {
       return true;
     }
-    console.log('deu merda');
     this.router.navigate(['/login']);
   }
+
   //Titulo da Page↓
   SetTitulo(titulo) {
     this.TituloObj.Header = titulo
@@ -41,12 +44,19 @@ export class CacheSrvService implements CanActivate {
       this.ifAuth();
     }
   }
+
+  getAuth() {
+    this.FinalAuth = [this.AuthObj.ClientId, this.AuthObj.UserType, this.AuthObj.Token]
+    console.log(this.FinalAuth)
+  }
+
   ifAuth() {
-    if (this.AuthObj.UserType == "7") {
-      return true;
-    }else{
+    let token = this.storage.readSessionStorage('token_user')
+    if (token) {
       return true;
     }
+
+    return false;
   }
 
 

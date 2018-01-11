@@ -1,5 +1,6 @@
 $Azul: #1879bf;
 
+
 .Centro {
   //text-align: center;
   margin-top: 5%;
@@ -7,7 +8,9 @@ $Azul: #1879bf;
   display: flex;
   justify-content: center;
 }
-
+.card{
+  width: auto !important;
+}
 .card-body {
   font-size: 13px;
 }

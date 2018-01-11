@@ -1,3 +1,8 @@
+import { StorageService } from './Services/storage.service';
+import { FilterPageComponent } from './Pages/filter-page/filter-page.component';
+import { HistoryPageComponent } from './Pages/history-page/history-page.component';
+import { MainPageComponent } from './Pages/main-page/main-page.component';
+import { LoginPageComponent } from './Pages/login-page/login-page.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -6,11 +11,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Paginas↓
   import { AppRoutingModule } from './app.routing.module';
-  import { FilterPageComponent } from './Pages/filter-page/filter-page.component';
-  import { HistoryPageComponent } from './Pages/history-page/history-page.component';
-  import { MainPageComponent } from './Pages/main-page/main-page.component';
-  import { LoginPageComponent } from './Pages/login-page/login-page.component';
-//Serviços↓
   import { CacheSrvService } from './Services/CacheSrv/cache-srv.service';
   import { AmazonSrvService } from './Services/AmazonSrv/amazon-srv.service';
   import {  HttpModule  } from '@angular/http';
@@ -81,7 +81,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ CacheSrvService, AmazonSrvService ],
+  providers: [ CacheSrvService, AmazonSrvService, StorageService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -45,8 +45,8 @@ VerificarLogin(username, senha) {
     "context": {
       "stage": "DEV"
     }
-
   }
+
   return this.http.post(this.urlLoginService, this.data, this.getHeader())
     .toPromise()
     .then(this.extractData)
@@ -54,16 +54,21 @@ VerificarLogin(username, senha) {
 }
 
 
-
-
+  // metodos privados
   private extractData(res: Response) {
-  const body = res.json();
-  return body || {};
+    const body = res.json();
+    return body || {};
+  }
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error);
+    return Promise.reject(error.message || error);
+  }
+
 }
-  private handleError(error: any): Promise < any > {
-  return Promise.reject(error.message || error);
-}
-}
+
+
+
+
 
 /*
  this.cacheSrv.SetAuth(body.accessToken, body.user.Items[0].userType,body.clientId);

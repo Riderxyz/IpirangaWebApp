@@ -1,7 +1,12 @@
+import { StorageService } from './../../Services/storage.service';
 import { CacheSrvService } from './../../Services/CacheSrv/cache-srv.service';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { AmazonSrvService } from '../../Services/AmazonSrv/amazon-srv.service';
+import swal from 'sweetalert2';
+
+
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -10,28 +15,64 @@ import { AmazonSrvService } from '../../Services/AmazonSrv/amazon-srv.service';
 export class LoginPageComponent implements OnInit {
 //credencials:any
 
-Credencials = {
-   usuario: 'emersonl',
-   senha:'HalfLife2!' 
+  nameLocalStorageSessionLogin = 'token_user';
+
+  credencials = {
+    usuario: 'emersonl',
+    senha: 'HalfLife2!'
   };
   constructor(
     private router: Router,
-    private awsSrv:AmazonSrvService,    
-    private cacheSrv:CacheSrvService
-  ) {}
+    private awsSrv: AmazonSrvService,
+    private cacheSrv: CacheSrvService,
+    private storage: StorageService
+  ) { }
 
   ngOnInit() {
     
   }
-  Login() { 
-    this.awsSrv.VerificarLogin(this.Credencials.usuario, this.Credencials.senha)
-    .then((res) => {
-      console.log('Res: ', res);
-      this.cacheSrv.SetAuth(res.accessToken, res.user.Items[0].userType, res.clientId);
-      this.router.navigateByUrl('home');
-      this.cacheSrv.SetTitulo(this.Credencials.usuario)
-    })
-  
-    //this.router.navigateByUrl('/home')
-  }  
+  Login() {
+    this.loading(true);
+
+    this.cacheSrv.SetTitulo(this.credencials.usuario)
+
+    this.awsSrv.VerificarLogin(this.credencials.usuario, this.credencials.senha)
+      .then((res) => {
+        this.storage.writeSessionStorage(JSON.stringify(res), this.nameLocalStorageSessionLogin);
+        if (this.storage.readSessionStorage(this.nameLocalStorageSessionLogin)) {
+          this.router.navigate(['/home']);
+        }
+        this.loading(false);
+      })
+      .catch((err) => console.log(err));
+
+
+
+
+    //   this.awsSrv.VerificarLogin(this.Credencials.usuario, this.Credencials.senha)
+
+
+    // this.router.navigateByUrl('/home')
+  }
+
+
+
+  // loading 
+
+  private loading(statusModal: any) {
+    if (statusModal) {
+      swal({
+        showConfirmButton: false,
+        showCancelButton: false,
+        allowEscapeKey: false,
+        allowOutsideClick: false
+      });
+      swal.showLoading();
+    } else {
+      swal.hideLoading();
+      swal.close();
+    }
+  }
+
+
 }

@@ -1,6 +1,8 @@
+import { StorageService } from './../../Services/storage.service';
 import { CacheSrvService } from './../../Services/CacheSrv/cache-srv.service';
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,25 +10,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-titulo:any
-  constructor(public cacheSrv:CacheSrvService) { 
+
+  nameLocalStorageSessionLogin = 'token_user';
+  titulo: any;
+  public ifLogged = false;
+
+
+
+  constructor(
+    public cacheSrv: CacheSrvService,
+    private storage: StorageService,
+    private router: Router
+  ) { }
+
+  ngOnInit() {
     this.titulo = this.cacheSrv.GetTitulo()
-
-    console.log(this.titulo); 
-
     if (this.titulo == null) {
       this.titulo = 'Teste';
     }
+
+    let token = this.storage.readSessionStorage('token_user')
+    if (token) {
+      this.ifLogged = true;
+    }
   }
 
-  ngOnInit() {
+  logoff() {
+    console.log('chamada para sair');
+    this.storage.eraseSessionStorage(this.nameLocalStorageSessionLogin);
+    this.router.navigate(['/home']);
   }
 
-Sair(){
-  console.log(this.cacheSrv.TituloObj.Header);
-  //this.titulo = this.cacheSrv.TituloObj.Header;
-  console.log(this.titulo)
-}
 
 
 
