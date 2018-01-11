@@ -7,9 +7,15 @@ import { CacheSrvService } from './../../Services/CacheSrv/cache-srv.service';
 })
 export class FilterPageComponent implements OnInit {
 
-  constructor(public cacheSrv:CacheSrvService) { }
+  constructor(public cacheSrv:CacheSrvService) { 
+  
+
+  
+  }
 
   ngOnInit() {
   }
+
+
 
 }
