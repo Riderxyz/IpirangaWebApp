@@ -10,8 +10,6 @@ import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-c
 export class ListaBeerCaveComponent implements OnInit {
 
   relatorioService: any[];
-
-
   opcao = [
     {
       id: 1, name: '1. Quantidade de usuarios',
@@ -74,7 +72,9 @@ export class ListaBeerCaveComponent implements OnInit {
   }
 
   private relatorioServiceExtrerno():void{
-    trhis.ser
+    this.service.listarRelatorio().subscribe((dados)=>{
+      this.relatorioService = dados;
+    })
   }
 
 }
