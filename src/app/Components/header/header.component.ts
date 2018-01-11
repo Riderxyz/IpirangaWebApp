@@ -11,13 +11,7 @@ export class HeaderComponent implements OnInit {
 titulo:any
   constructor(public cacheSrv:CacheSrvService) { 
     this.titulo = this.cacheSrv.GetTitulo()
-    this.cacheSrv.FuncaoChamada$.subscribe(
-      () => {
-        console.log(this.cacheSrv.TituloObj.Header);   
-        this.titulo = this.cacheSrv.TituloObj.Header;
-        //this.Sair()
-      }
-    );
+
     console.log(this.titulo); 
 
     if (this.titulo == null) {
