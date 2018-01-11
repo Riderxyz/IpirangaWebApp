@@ -4,19 +4,12 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
-import { AmazonSrvService } from './../AmazonSrv/amazon-srv.service';
 
 @Injectable()
 export class CacheSrvService implements CanActivate {
-  // UsuarioObj: any = { username: null };
-  // DatabaseObj: any = { Destino: null, Executar: null };
-  private ifLogged = false;
-
   TituloObj: any = { Header: null, Notification: null };
   AuthObj: any = { Token: null, UserType: null, ClientId: null }
-  FinalAuth: any
   constructor(private router: Router ) {
-
   }
   //Rotas↓
   canActivate(
@@ -29,17 +22,6 @@ export class CacheSrvService implements CanActivate {
     console.log('deu merda');
     this.router.navigate(['/login']);
   }
-
-<<<<<<< HEAD
-//ChamarFunção
-  // Observable string sources
-  private resultado = new Subject<any>();
-
-  // Observable string streams
-  FuncaoChamada$ = this.resultado.asObservable();
-=======
->>>>>>> 5f68b313e90d22d14a14aa8a7ad2c4e6ba8bbd4a
-
   //Titulo da Page↓
   SetTitulo(titulo) {
     this.TituloObj.Header = titulo
@@ -47,25 +29,24 @@ export class CacheSrvService implements CanActivate {
   GetTitulo() {
     return this.TituloObj.Header
   }
+
   //Autenticação↓
 
   SetAuth(token, usertype, client_id) {
     this.AuthObj.Token = token;
     this.AuthObj.UserType = usertype
     this.AuthObj.ClientId = client_id
-  }
-
-<<<<<<< HEAD
-   ifAuth() {
-=======
-  getAuth() {
-    
-    this.FinalAuth = [this.AuthObj.ClientId, this.AuthObj.UserType, this.AuthObj.Token]
-    console.log(this.FinalAuth)
+    if (this.AuthObj.Token != null) {
+        
+      this.ifAuth();
+    }
   }
   ifAuth() {
->>>>>>> 5f68b313e90d22d14a14aa8a7ad2c4e6ba8bbd4a
-    return true;
+    if (this.AuthObj.UserType == "7") {
+      return true;
+    }else{
+      return false;
+    }
   }
 
 
