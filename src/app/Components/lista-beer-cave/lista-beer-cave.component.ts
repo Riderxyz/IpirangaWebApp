@@ -9,8 +9,8 @@ import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-c
 })
 export class ListaBeerCaveComponent implements OnInit {
 
-  relatorioService: any[];
-  opcao = [{id: 1, name: 'xpto'}];
+ public relatorioService;
+  // opcao = [{id: 1, name: 'xpto'}];
   //  [
     // {
     //   id: 1, name: '1. Quantidade de usuarios',
@@ -68,15 +68,25 @@ export class ListaBeerCaveComponent implements OnInit {
 
   constructor(private service: AmazonSrvService) { }
 
+
   ngOnInit(): void {
-    this.relatorioServiceExtrerno();
+   this.relatoriosLista();
+   }
+
+
+  relatoriosLista() {
+    return this.service.listarRelatorioService()
+    .then((res) => this.relatorioService = res)
+    .catch((err) => console.log(err) );
   }
 
-  private relatorioServiceExtrerno():void{
-    this.service.listarRelatorio().subscribe((dados)=>{
-      this.relatorioService = dados;
-    })
-  }
+
+
+  // private relatorioServiceExtrerno():void{
+  //   this.service.listarRelatorioService().subscribe((dados)=>{
+  //     this.relatorioService = dados;
+  //   })
+  // }
 
 }
 

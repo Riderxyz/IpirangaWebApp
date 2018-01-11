@@ -9,13 +9,12 @@ import { CacheSrvService } from '../CacheSrv/cache-srv.service';
 @Injectable()
 export class AmazonSrvService {
   data: any
-  linkRelatorio: string = 'https://5t2gsxwp07.execute-api.us-east-1.amazonaws.com/DEV/v1/reportsservices/s3list';
+  linkRelatorio = 'https://5t2gsxwp07.execute-api.us-east-1.amazonaws.com/DEV/v1/reportsservices/s3list';
   urlLoginService = 'https://or9jz65n7i.execute-api.us-east-1.amazonaws.com/DEV/v1/cmsservices/socialmedia-wcm-soapauth-post';
   constructor(private http: Http, public cacheSrv: CacheSrvService) { }
-  listarRelatorio(): Observable<any[]> {   
-   return this.http.get(this.linkRelatorio).map((resp) => resp.json());		
-}
+
   private x_api_key = 'U4exZaLqkX8vQatRYqRxk5r3dHKtYtm82EG5b5uN'
+
   private getHeader() {
   // tslint:disable-next-line:prefer-const
   let headers = new Headers();
@@ -25,6 +24,16 @@ export class AmazonSrvService {
   headers.append('Accept', 'application/json');
   return new RequestOptions({ headers: headers });
 }
+
+listarRelatorioService() {
+  return this.http.get(this.linkRelatorio, this.getHeader())
+  .toPromise()
+  .then(this.extractData)
+  .catch(this.handleError);
+}
+
+
+
 VerificarLogin(username, senha) {
   this.data = {
     "username": username,
@@ -43,14 +52,15 @@ VerificarLogin(username, senha) {
     .then(this.extractData)
     .catch(this.handleError);
 }
-  public extractData(res: Response) {
+
+
+
+
+  private extractData(res: Response) {
   const body = res.json();
-  console.log(body);
-  console.log(body.user.Items[0].userType);
   return body || {};
 }
   private handleError(error: any): Promise < any > {
-  console.error('An error occurred', error);
   return Promise.reject(error.message || error);
 }
 }
