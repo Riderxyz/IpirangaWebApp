@@ -36,9 +36,13 @@
     width: 100%;
   }
 
-  .box {
-    background: #fff;
-    border: 1px solid #ccc;
-    -webkit-border-radius: 10px 10px 10px 10px;
-    border-radius: 10px 10px 10px 10px;
- }
+   .box {
+        background: blue;
+        border: 1px solid gray;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        border-radius: 10px 10px 10px 10px;
+        &:focus{
+
+          background: white;
+        }
+     }
