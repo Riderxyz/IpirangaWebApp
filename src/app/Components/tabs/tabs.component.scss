@@ -18,6 +18,7 @@
 }
 
 ::ng-deep .mat-tab-label{
+  border: 1px solid gray;
   width: 80%;
   border-style: none;
   font-family: 'Ubuntu', serif;
@@ -25,14 +26,7 @@
   font-size: 20px;
   background: #1379C3;
   color: white;
-}
+  border-radius: 10px 10px 0px 0px;
+}//aba quando ela esta desativada
 
-::ng-deep .mat-tab-label.mat-tab-label-active{
-  width: 80%;
-  border-style: none;
-  color: #1379C3;
-  background: white;
-  font-family: 'Ubuntu', serif;
-  font-weight: bold;
-  font-size: 20px;
-}
+
