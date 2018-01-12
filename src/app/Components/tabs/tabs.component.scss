@@ -18,7 +18,6 @@
 }
 
 ::ng-deep .mat-tab-label{
-  border: 1px solid gray;
   width: 80%;
   border-style: none;
   font-family: 'Ubuntu', serif;
@@ -29,4 +28,16 @@
   border-radius: 10px 10px 0px 0px;
 }//aba quando ela esta desativada
 
+::ng-deep .mat-ink-bar{
+  background: transparent !important
+}
 
+
+
+// #tabFR{
+//   border: 1px solid gray;
+// }
+
+// #tabHR{
+//   border: 1px solid gray;
+// }
