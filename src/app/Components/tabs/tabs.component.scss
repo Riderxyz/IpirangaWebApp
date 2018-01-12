@@ -1,22 +1,31 @@
 .demo-tab-group {
-    .mat-tabs-labels{
-      justify-content: center
-    }
+  .mat-tabs-labels {
+    justify-content: center;
   }
-
-  .demo-tab-content {
-    padding: 16px;
-  }
-  ::ng-deep .mat-tab-labels{
-    justify-content: center; /* align items in Main Axis */
 }
+.demo-tab-content {
+  padding: 16px;
+}
+::ng-deep .mat-tab-labels {
+  justify-content: center; /* align items in Main Axis */
+}
+
 ::ng-deep .mat-tab-label{
-  width: 100%;
+  width: 80%;
   border-style: none;
-  color:white;
+  font-family: 'Ubuntu', serif;
+  font-weight: bold;
+  font-size: 20px;
+  background: #06c;
+  color: white;
+}
+
+::ng-deep .mat-tab-label.mat-tab-label-active{
+  width: 80%;
+  border-style: none;
+  color: #06c;
+  background: white;
   font-family: 'Ubuntu', serif;
   font-weight: bold;
   font-size: 20px;
 }
-
-
