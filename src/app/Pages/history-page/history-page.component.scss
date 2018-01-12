@@ -18,4 +18,15 @@
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
     size: 30px;
+    padding: 0px 300px 0px 300px
+  }
+
+  ::ng-deep .mat-tab-label.mat-tab-label-active{
+    width: 80%;
+    border-style: none;
+    color: #06c;
+    background: white;
+    font-family: 'Ubuntu', serif;
+    font-weight: bold;
+    font-size: 20px;
   }
