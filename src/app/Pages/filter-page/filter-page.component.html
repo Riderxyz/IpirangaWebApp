@@ -1,10 +1,10 @@
 <div>
-  <mat-accordion *ngFor="let itemExpand of AWS_DatabaseDatePicker">
+  <mat-accordion  (click)="iniciarRotacao()" *ngFor="let itemExpand of AWS_DatabaseDatePicker" >
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
           <div>
-            {{itemExpand.titulo}}
+              <i class="fa fa-chevron-right " aria-hidden="true"></i> {{itemExpand.titulo}}
           </div>
         </mat-panel-title>
         <mat-panel-description>
@@ -40,7 +40,7 @@
         </span>
         <span class="example-spacer"></span>
         <div style="text-align:  end;">
-          <button mat-raised-button class="" (click)="Ativar(itemExpand)">Gerar Relatório</button>
+          <button mat-raised-button class="relatoriobotao" (click)="Ativar(itemExpand)">Gerar Relatório</button>
         </div>
 
       </mat-toolbar-row>
