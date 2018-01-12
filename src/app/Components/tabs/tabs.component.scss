@@ -3,9 +3,15 @@
     justify-content: center;
   }
 }
+
 .demo-tab-content {
   padding: 16px;
 }
+
+.fundoTwoAbas {
+  background: white;
+}
+
 ::ng-deep .mat-tab-labels {
   justify-content: center; /* align items in Main Axis */
 }
@@ -24,7 +30,7 @@
   width: 80%;
   border-style: none;
   color: #06c;
-  background: #ffffff;
+  background: white;
   font-family: 'Ubuntu', serif;
   font-weight: bold;
   font-size: 20px;
