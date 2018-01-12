@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CacheSrvService } from './../../Services/CacheSrv/cache-srv.service';
+import { DateAdapter } from '@angular/material';
 @Component({
   selector: 'app-filter-page',
   templateUrl: './filter-page.component.html',
@@ -10,7 +11,8 @@ export class FilterPageComponent implements OnInit {
   AWS_DatabaseDatePicker: any;
   Date_Picker_Model1 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   Date_Picker_Model2 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
-  constructor(public cacheSrv: CacheSrvService) {
+  constructor(public cacheSrv: CacheSrvService, private dateAdapter:DateAdapter<Date>) {
+    dateAdapter.setLocale('en-in')
     this.itemDabase()
   }
 
@@ -87,6 +89,6 @@ export class FilterPageComponent implements OnInit {
 
   Ativar(item) {
     console.log(item.value)
-    console.log(this.Date_Picker_Model)
+    console.log(/*this.Date_Picker_Model*/)
   }
 }
