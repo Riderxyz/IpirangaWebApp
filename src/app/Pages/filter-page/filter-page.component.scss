@@ -1,4 +1,22 @@
-.example-card {
-   // width: 400px;
-  }
-  
+.relatoriobotao {
+  background-color: #007bc4;
+  color: #fff;
+  position: absolute;
+  top: 0vh;
+  left: 147vh;
+}
+
+.spanDate{
+  margin-left: 2%
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+
+.bordaInput{
+border-color: red;
+border-width: 1px;
+border-style: solid;
+}
