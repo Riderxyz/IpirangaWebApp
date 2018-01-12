@@ -1,13 +1,15 @@
 <div class="beer">
   <!-- <tree-root [nodes]="opcao" [options]="options"></tree-root> -->
   <br/>
-  <table>
+
+    <table>
     <tr>
       <td align=left>Relatorio</td>
     </tr>
     <tr *ngFor="let item of relatorioService">
-      <td align=left >{{item.months}}</td>
-      <!-- <td>{{item | json}}</td> -->
+      <td align=left >{{item.year}}</td>
+       <!-- <td>{{item | json}}</td> -->
     </tr>
   </table>
+
 </div>
