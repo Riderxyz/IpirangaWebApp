@@ -8,8 +8,9 @@
   padding: 16px;
 }
 
-.fundoTwoAbas {
+.demo-tab-group {
   background: white;
+  border-radius: 10px 10px 10px 10px;
 }
 
 ::ng-deep .mat-tab-labels {
@@ -22,14 +23,14 @@
   font-family: 'Ubuntu', serif;
   font-weight: bold;
   font-size: 20px;
-  background: #06c;
+  background: #1379C3;
   color: white;
 }
 
 ::ng-deep .mat-tab-label.mat-tab-label-active{
   width: 80%;
   border-style: none;
-  color: #06c;
+  color: #1379C3;
   background: white;
   font-family: 'Ubuntu', serif;
   font-weight: bold;
