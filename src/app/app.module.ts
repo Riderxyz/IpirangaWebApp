@@ -1,8 +1,3 @@
-import { StorageService } from './Services/storage.service';
-import { FilterPageComponent } from './Pages/filter-page/filter-page.component';
-import { HistoryPageComponent } from './Pages/history-page/history-page.component';
-import { MainPageComponent } from './Pages/main-page/main-page.component';
-import { LoginPageComponent } from './Pages/login-page/login-page.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -10,10 +5,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Paginas↓
+  import { FilterPageComponent } from './Pages/filter-page/filter-page.component';
+  import { HistoryPageComponent } from './Pages/history-page/history-page.component';
+  import { MainPageComponent } from './Pages/main-page/main-page.component';
+  import { LoginPageComponent } from './Pages/login-page/login-page.component';
+//Serviços↓
   import { AppRoutingModule } from './app.routing.module';
   import { CacheSrvService } from './Services/CacheSrv/cache-srv.service';
   import { AmazonSrvService } from './Services/AmazonSrv/amazon-srv.service';
   import {  HttpModule  } from '@angular/http';
+  import { StorageService } from './Services/storage.service';
   import {HttpClientModule} from '@angular/common/http';
 //Componentes↓
   import { HeaderComponent } from './Components/header/header.component';
@@ -23,42 +24,42 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   import { ListaPadariaComponent } from './Components/lista-padaria/lista-padaria.component';
   import { ListaBeerCaveComponent } from './Components/lista-beer-cave/lista-beer-cave.component';
 //AngularMaterial↓
-import {
-  MatAutocompleteModule,
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatNativeDateModule,
-  MatDialogModule,
-  MatExpansionModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatTooltipModule,
-  MatStepperModule,
-} from '@angular/material';
-import {CdkTableModule} from '@angular/cdk/table';
-import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
-import { DateFormat } from './date-format';
+  import {
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatStepperModule,
+  } from '@angular/material';
+  import {CdkTableModule} from '@angular/cdk/table';
+  import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
+  import { DateFormat } from './date-format';
 //Angular tree↓
   import { TreeModule } from 'angular-tree-component';
   import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-component';
@@ -88,7 +89,7 @@ import { DateFormat } from './date-format';
   imports: [
     BrowserModule,
     FormsModule,
-  //AngularMaterial
+//AngularMaterial
   CdkTableModule,
   MatAutocompleteModule,
   MatButtonModule,
@@ -121,15 +122,15 @@ import { DateFormat } from './date-format';
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
-  //Tree
+//Tree
     TreeModule,
-  //Http
+//Http
     BrowserAnimationsModule,
     HttpClientModule,
     HttpModule,
     AppRoutingModule
   ],
-  providers:[CacheSrvService, AmazonSrvService, StorageService,{provide: DateAdapter, useClass: DateFormat}],
-  bootstrap: [AppComponent]
+providers:[CacheSrvService, AmazonSrvService, StorageService,{provide: DateAdapter, useClass: DateFormat}],
+ bootstrap: [AppComponent]
 })
 export class AppModule { }
