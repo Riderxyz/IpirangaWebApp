@@ -6,10 +6,17 @@
   left: 147vh;
 }
 
-.colDate{
-  width: 100%;
-  padding: 0px
+.spanDate{
+  margin-left: 2%
 }
-.col-1{
-  max-width: unset
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+
+.bordaInput{
+border-color: red;
+border-width: 1px;
+border-style: solid;
 }
