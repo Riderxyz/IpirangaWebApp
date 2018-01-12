@@ -4,7 +4,7 @@
           <mat-expansion-panel-header>
             <mat-panel-title>
               <div>
-              {{itemExpand.titulo}}
+                  {{itemExpand.titulo}}
               </div>
             </mat-panel-title>
             <mat-panel-description>
@@ -19,7 +19,7 @@
             </mat-select>
           </mat-form-field>
               <mat-form-field class="example-full-width">
-                  <input matInput [matDatepicker]="pickerName" placeholder="Choose a date">
+                  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
                   <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
                 <button mat-raised-button (click)="picker.open()">Open</button>
