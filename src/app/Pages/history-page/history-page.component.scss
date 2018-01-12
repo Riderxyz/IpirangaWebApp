@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
+
+
 .fundo {
     // background:#d3e5f3;
     background-position: center;
@@ -18,4 +20,15 @@
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
     size: 30px;
+    // padding: 0px 180px 0px 160px
+  }
+
+  ::ng-deep .mat-tab-label.mat-tab-label-active{
+    width: 80%;
+    border-style: none;
+    color: #06c;
+    background: white;
+    font-family: 'Ubuntu', serif;
+    font-weight: bold;
+    font-size: 20px;
   }
