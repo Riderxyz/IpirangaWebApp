@@ -31,6 +31,7 @@ import {
   MatCheckboxModule,
   MatChipsModule,
   MatDatepickerModule,
+  MatNativeDateModule,
   MatDialogModule,
   MatExpansionModule,
   MatGridListModule,
@@ -38,7 +39,6 @@ import {
   MatInputModule,
   MatListModule,
   MatMenuModule,
-  MatNativeDateModule,
   MatPaginatorModule,
   MatProgressBarModule,
   MatProgressSpinnerModule,
@@ -57,6 +57,8 @@ import {
   MatStepperModule,
 } from '@angular/material';
 import {CdkTableModule} from '@angular/cdk/table';
+import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
+import { DateFormat } from './date-format';
 //Angular tree↓
   import { TreeModule } from 'angular-tree-component';
   import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-component';
@@ -127,7 +129,7 @@ import {CdkTableModule} from '@angular/cdk/table';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ CacheSrvService, AmazonSrvService, StorageService ],
+  providers:[CacheSrvService, AmazonSrvService, StorageService,{provide: DateAdapter, useClass: DateFormat}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

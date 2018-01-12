@@ -1,29 +1,59 @@
 <div>
-    <mat-accordion *ngFor="let itemExpand of AWS_DatabaseDatePicker">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <div>
-                  {{itemExpand.titulo}}
-              </div>
-            </mat-panel-title>
-            <mat-panel-description>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <div style="text-align: start;">
-          <mat-form-field>
-          <mat-select placeholder="Aplicativo" name="food">
-              <mat-option *ngFor="let item of AWS_DatabaseDropdown" [value]="item.value">
+  <mat-accordion *ngFor="let itemExpand of AWS_DatabaseDatePicker">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <div>
+            {{itemExpand.titulo}}
+          </div>
+        </mat-panel-title>
+        <mat-panel-description>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div style="text-align: start;">
+        <div class="row">
+          <div class="col-1">
+            <mat-form-field>
+              <mat-select placeholder="Aplicativo" name="Aplicativo">
+                <mat-option *ngFor="let item of AWS_DatabaseDropdown" [value]="item.value">
                   {{ item.viewValue }}
                 </mat-option>
-            </mat-select>
-          </mat-form-field>
-              <mat-form-field class="example-full-width">
-                  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-8">
+            <div class="row">
+              <div class="col colDate">
+                <mat-form-field class="example-full-width">
+                  <input matInput [matDatepicker]="picker" [(ngModel)]="itemExpand.periodo1" placeholder="Choose a date">
                   <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
-                <button mat-raised-button (click)="picker.open()">Open</button>
+                <a sty (click)="picker.open()" class="btn btn-link">
+                  <i class="fa fa-2x fa-calendar"></i>
+                </a>
+              
+              
+                <mat-form-field class="example-full-width">
+                  <input matInput [matDatepicker]="picker2" [(ngModel)]="itemExpand.periodo2" placeholder="Choose a date">
+                  <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+                <a sty (click)="picker2.open()" class="btn btn-link">
+                  <i class="fa fa-2x fa-calendar"></i>
+                </a>
+                <div style="text-align:  end;">
+                    <button mat-raised-button class="relatoriobotao" (click)="Ativar(itemExpand)">Gerar Relatório</button>
+                  </div>
+            </div>
           </div>
-        </mat-expansion-panel>
-      </mat-accordion>
+          </div>
+    <!--       <div class="col-3" style="text-align:  end;">
+            <button mat-raised-button class="relatoriobotao" (click)="Ativar(itemExpand)">Gerar Relatório</button>
+          </div> -->
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>
+<!-- 
+
+<button mat-raised-button (click)="picker.open()">Open</button>-->
