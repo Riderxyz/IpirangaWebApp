@@ -93,8 +93,12 @@ export class FilterPageComponent implements OnInit {
   iniciarRotacao() {
     console.log(this.iconchange);
 
-    if (this.iconchange == null) {
+    if (this.iconchange == null || this.iconchange == 'rotateToClose') {
       this.iconchange = 'rotateToOpen'
+    } else {
+      if (this.iconchange == 'rotateToOpen') {
+        this.iconchange = 'rotateToClose'
+      }
     }
     console.log(this.iconchange);
 

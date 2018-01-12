@@ -1,6 +1,7 @@
 .relatoriobotao {
   background-color: #007bc4;
   color: #fff;
+
 }
 
 .spanDate {
@@ -25,7 +26,7 @@
   margin: 5% auto;
 
   -webkit-animation-name: rotateToOpen;
-  -webkit-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.3s;
   -webkit-animation-timing-function: ease;
   -webkit-animation-delay: 0s;
   -webkit-animation-iteration-count: 1;
@@ -33,7 +34,7 @@
   -webkit-animation-fill-mode: forwards;
  
   animation-name: rotateToOpen;
-  animation-duration: 0.5s;
+  animation-duration: 0.3s;
   animation-timing-function: ease;
   animation-delay: 0s;
   animation-iteration-count: 1;
@@ -59,7 +60,7 @@
   margin: 5% auto;
 
   -webkit-animation-name: rotateToClose;
-  -webkit-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.3s;
   -webkit-animation-timing-function: ease;
   -webkit-animation-delay: 0s;
   -webkit-animation-iteration-count: 1;
@@ -67,7 +68,7 @@
   -webkit-animation-fill-mode: forwards;
  
   animation-name: rotateToClose;
-  animation-duration: 0.5s;
+  animation-duration: 0.3s;
   animation-timing-function: ease;
   animation-delay: 0s;
   animation-iteration-count: 1;
@@ -88,4 +89,4 @@
    transform: rotate(90deg);
    }
  }
-
+ 
