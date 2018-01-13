@@ -28,11 +28,17 @@
   border-radius: 10px 10px 0px 0px;
 }//aba quando ela esta desativada
 
-::ng-deep .mat-ink-bar{
+::ng-deep .mat-ink-bar {
   background: transparent !important
 }
 
-
+::ng-deep .mat-tab-group.mat-primary .mat-tab-label:focus, .mat-tab-group.mat-primary .mat-tab-link:focus, .mat-tab-nav-bar.mat-primary .mat-tab-label:focus, .mat-tab-nav-bar.mat-primary .mat-tab-link:focus{
+  background: transparent !important
+}
+::ng-deep .mat-ripple-element {
+  display: none !important;
+  padding: 20px !important;
+}
 
 // #tabFR{
 //   border: 1px solid gray;
