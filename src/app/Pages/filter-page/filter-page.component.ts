@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CacheSrvService } from './../../Services/CacheSrv/cache-srv.service';
 import { DateAdapter } from '@angular/material';
+
 @Component({
   selector: 'app-filter-page',
   templateUrl: './filter-page.component.html',
@@ -11,9 +12,12 @@ export class FilterPageComponent implements OnInit {
   AWS_DatabaseDatePicker: any;
   Date_Picker_Model1 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   Date_Picker_Model2 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
-  constructor(public cacheSrv: CacheSrvService, private dateAdapter:DateAdapter<Date>) {
+  iconchange: any
+  constructor(public cacheSrv: CacheSrvService, private dateAdapter: DateAdapter<Date>) {
     dateAdapter.setLocale('en-in')
     this.itemDabase()
+
+
   }
 
   ngOnInit() {
@@ -84,6 +88,20 @@ export class FilterPageComponent implements OnInit {
       },
 
     ]
+  }
+
+  iniciarRotacao() {
+    console.log(this.iconchange);
+
+    if (this.iconchange == null || this.iconchange == 'rotateToClose') {
+      this.iconchange = 'rotateToOpen'
+    } else {
+      if (this.iconchange == 'rotateToOpen') {
+        this.iconchange = 'rotateToClose'
+      }
+    }
+    console.log(this.iconchange);
+
   }
 
 
