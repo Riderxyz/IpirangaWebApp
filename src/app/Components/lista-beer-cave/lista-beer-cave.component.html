@@ -1,20 +1,15 @@
-<div class="beer">
-  <!-- <tree-root [nodes]="opcao" [options]="options"></tree-root> -->
-  <br/>
 
-    <table>
-    <tr>
-      <td align=left>Relatorio</td>
-    </tr>
-    <tr *ngFor="let item of relatorioService">
-<<<<<<< HEAD
-      <td>{{item.year}}</td>
-      <!-- <td>{{item | json}}</td> -->
-=======
-      <td align=left >{{item.year}}</td>
-       <!-- <td>{{item | json}}</td> -->
->>>>>>> reueldev
-    </tr>
-  </table>
-
+</div> -->
+<div>
+  <mat-accordion *ngFor="let itemExpand of AWS_DatabaseDatePicker">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <div>
+            {{itemExpand.titulo}}
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>
