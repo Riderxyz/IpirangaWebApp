@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CacheSrvService } from './../../Services/CacheSrv/cache-srv.service';
 import { DateAdapter } from '@angular/material';
+import {IMyDpOptions} from 'mydatepicker';
 
 @Component({
   selector: 'app-filter-page',
@@ -13,10 +14,19 @@ export class FilterPageComponent implements OnInit {
   Date_Picker_Model1 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   Date_Picker_Model2 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   iconchange: any
-  constructor(public cacheSrv: CacheSrvService, private dateAdapter: DateAdapter<Date>) {
+  model:any
+  public myDatePickerOptions: IMyDpOptions = {
+    // other options...
+    dateFormat: 'mm.yyyy',
+    width:'10%',
+};
+
+
+  constructor(public cacheSrv: CacheSrvService, private dateAdapter: DateAdapter<Date> ) {
     dateAdapter.setLocale('en-in')
     this.itemDabase()
 
+ //this.myDatePickerOptions = 
 
   }
 

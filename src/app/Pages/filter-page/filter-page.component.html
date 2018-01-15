@@ -38,12 +38,13 @@
             <i class="fa fa-2x fa-calendar"></i>
           </a>
         </span>
-        <span class="example-spacer"></span>
+        <span class="example-spacer">
+        </span>
         <div style="text-align:  end;">
           <button mat-raised-button class="relatoriobotao" (click)="Ativar(itemExpand)">Gerar Relatório</button>
         </div>
-
       </mat-toolbar-row>
+      <my-date-picker name="mydate" [options]="myDatePickerOptions" [(ngModel)]="model" required></my-date-picker>
     </mat-expansion-panel>
   </mat-accordion>
 </div>
