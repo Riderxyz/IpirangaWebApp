@@ -3,7 +3,6 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
-import { log } from 'util';
 import { CacheSrvService } from '../CacheSrv/cache-srv.service';
 
 @Injectable()
@@ -55,7 +54,7 @@ VerificarLogin(username, senha) {
 
 
   // metodos privados
-  private extractData(res: Response) {
+  private extractData( res: Response ) {
     const body = res.json();
     return body || {};
   }

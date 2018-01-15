@@ -1,14 +1,30 @@
-
 <div>
+
   <mat-accordion *ngFor="let itemExpand of AWS_DatabaseDatePicker">
     <mat-expansion-panel>
+
       <mat-expansion-panel-header>
         <mat-panel-title>
           <div>
-            {{itemExpand.titulo}}
+            <i class="fa fa-chevron-right {{iconchange}}" aria-hidden="true"></i> {{itemExpand.titulo}}
           </div>
         </mat-panel-title>
+        <mat-panel-description></mat-panel-description>
       </mat-expansion-panel-header>
+
+      <mat-toolbar-row>
+        <span>
+          <mat-form-field>
+            <mat-select placeholder="Relatórios">
+              <mat-option *ngFor="let item of relatorioService" [value]="item.year">
+                {{item.year}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </span>
+      </mat-toolbar-row>
+
     </mat-expansion-panel>
   </mat-accordion>
+
 </div>

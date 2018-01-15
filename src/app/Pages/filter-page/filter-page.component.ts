@@ -34,7 +34,8 @@ export class FilterPageComponent implements OnInit {
         titulo: '1. Quantidade de Usuario',
         periodo1: this.Date_Picker_Model1.data1,
         periodo2: this.Date_Picker_Model2.data1,
-        pickerID: "#Picker1"
+        pickerID: "#Picker1",
+        Seta: null,
       },
 
       {
@@ -90,17 +91,17 @@ export class FilterPageComponent implements OnInit {
     ]
   }
 
-  iniciarRotacao() {
-    console.log(this.iconchange);
-
-    if (this.iconchange == null || this.iconchange == 'rotateToClose') {
-      this.iconchange = 'rotateToOpen'
+  iniciarRotacao(item) {
+    console.log('Ativação da seta',item.Seta);
+    
+    if (item.Seta == null || item.Seta == 'rotateToClose') {
+      item.Seta = 'rotateToOpen'
     } else {
-      if (this.iconchange == 'rotateToOpen') {
-        this.iconchange = 'rotateToClose'
+      if (item.Seta == 'rotateToOpen') {
+       item.Seta = 'rotateToClose'
       }
     }
-    console.log(this.iconchange);
+    console.log(item.Seta);
 
   }
 
