@@ -94,7 +94,8 @@ export class ListaBeerCaveComponent implements OnInit {
   }
 
   iniciarRotacao() {
-    console.log(this.iconchange);
+    console.log("ROTACAO: ",this.iconchange);
+    console.log("Service: ",this.relatorioService);
 
     if (this.iconchange == null || this.iconchange == 'rotateToClose') {
       this.iconchange = 'rotateToOpen'
