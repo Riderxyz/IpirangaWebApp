@@ -63,7 +63,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Angular tree↓
   import { TreeModule } from 'angular-tree-component';
   import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -89,7 +88,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     FormsModule,
-//AngularMaterial
+//AngularMaterial↓
   CdkTableModule,
   MatAutocompleteModule,
   MatButtonModule,
@@ -122,15 +121,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
-//Tree
+//Tree↓
     TreeModule,
-//Http
+//Http↓
     BrowserAnimationsModule,
     HttpClientModule,
     HttpModule,
     AppRoutingModule
   ],
-providers:[CacheSrvService, AmazonSrvService, StorageService,{provide: DateAdapter, useClass: DateFormat}],
+providers:[
+  CacheSrvService, 
+  AmazonSrvService, 
+  StorageService,
+  {provide: DateAdapter, useClass: DateFormat}],
  bootstrap: [AppComponent]
 })
 export class AppModule { }

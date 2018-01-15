@@ -1,22 +1,114 @@
 .relatoriobotao {
   background-color: #007bc4;
   color: #fff;
-  position: absolute;
-  top: 0vh;
-  left: 147vh;
+
 }
 
-.spanDate{
-  margin-left: 2%
+.spanDate {
+  margin-left: 2%;
 }
+
 .example-spacer {
   flex: 1 1 auto;
 }
 
-
-
-.bordaInput{
-border-color: red;
-border-width: 1px;
-border-style: solid;
+.iconchange {
+  margin-right: 5px;
 }
+
+.bordaInput {
+  border-color: red;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.fa-chevron-right{
+  color: gold !important
+}
+
+.titleExpansion{
+  color: #6c98aa;
+  font-family: 'Ubuntu', serif;
+}
+
+/* .underlinha{
+border-bottom-style: solid;
+width: 71%;
+border-width: 1px;
+position: relative;
+margin-right: 0px;
+margin-bottom: 0px;
+}
+.margintitle{
+  margin-right:  0px;
+} */
+
+
+.rotateToOpen {
+  margin: 5% auto;
+
+  -webkit-animation-name: rotateToOpen;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+ 
+  animation-name: rotateToOpen;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+ 
+ }
+ 
+ @-webkit-keyframes rotateToOpen {
+   100%{
+   -webkit-transform: rotate(90deg);
+   transform: rotate(90deg);
+   }
+ }
+ 
+ @keyframes rotateToOpen {
+   100%{
+   transform: rotate(90deg);
+   }
+ }
+
+.rotateToClose {
+  margin: 5% auto;
+
+  -webkit-animation-name: rotateToClose;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: reverse;
+  -webkit-animation-fill-mode: forwards;
+ 
+  animation-name: rotateToClose;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+ 
+ }
+ 
+ @-webkit-keyframes rotateToClose {
+   100%{
+   -webkit-transform: rotate(90deg);
+   transform: rotate(90deg);
+   }
+ }
+ 
+ @keyframes rotateToClose {
+   100%{
+   transform: rotate(90deg);
+   }
+ }
+ 
