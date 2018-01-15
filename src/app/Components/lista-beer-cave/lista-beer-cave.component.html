@@ -17,7 +17,7 @@
           <mat-form-field>
             <mat-select placeholder="Relatórios">
               <mat-option *ngFor="let item of relatorioService" [value]="item">
-                {{item.months}}
+                {{item.year}} - {{item.months}}
               </mat-option>
             </mat-select>
           </mat-form-field>
