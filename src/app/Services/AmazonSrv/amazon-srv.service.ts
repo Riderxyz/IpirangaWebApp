@@ -31,8 +31,6 @@ listarRelatorioService() {
   .catch(this.handleError);
 }
 
-
-
 VerificarLogin(username, senha) {
   this.data = {
     "username": username,
