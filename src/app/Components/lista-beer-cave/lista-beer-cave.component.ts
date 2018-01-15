@@ -17,6 +17,8 @@ export class ListaBeerCaveComponent implements OnInit {
   Date_Picker_Model1 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   Date_Picker_Model2 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
 
+  iconchange: any
+
  constructor(
   public cacheSrv: CacheSrvService,
   private dateAdapter: DateAdapter<Date>,
@@ -88,6 +90,20 @@ export class ListaBeerCaveComponent implements OnInit {
       },
 
     ]
+
+  }
+
+  iniciarRotacao() {
+    console.log(this.iconchange);
+
+    if (this.iconchange == null || this.iconchange == 'rotateToClose') {
+      this.iconchange = 'rotateToOpen'
+    } else {
+      if (this.iconchange == 'rotateToOpen') {
+        this.iconchange = 'rotateToClose'
+      }
+    }
+    console.log(this.iconchange);
 
   }
 
