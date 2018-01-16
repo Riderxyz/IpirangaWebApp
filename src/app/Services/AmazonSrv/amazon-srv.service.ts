@@ -54,7 +54,7 @@ VerificarLogin(username, senha) {
 
 
   // metodos privados
-  private extractData( res: Response ) {
+  private extractData(res:Response ) {
     const body = res.json();
     return body || {};
   }

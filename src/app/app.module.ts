@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MyDatePickerModule } from 'mydatepicker';
+
 //Paginas↓
   import { FilterPageComponent } from './Pages/filter-page/filter-page.component';
   import { HistoryPageComponent } from './Pages/history-page/history-page.component';
@@ -88,6 +90,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     FormsModule,
+    MyDatePickerModule,
 //AngularMaterial↓
   CdkTableModule,
   MatAutocompleteModule,
