@@ -3,12 +3,6 @@ import { Component, OnInit, NgModule } from '@angular/core';
 import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-component';
 import { CacheSrvService } from './../../Services/CacheSrv/cache-srv.service';
 import { DateAdapter } from '@angular/material';
-<<<<<<< HEAD
-import { Input } from '@angular/core/src/metadata/directives';
-import {Relatorio} from './../../Control/relatorioModel';
-=======
-
->>>>>>> reueldev
 @Component({
   selector: 'app-lista-beer-cave',
   templateUrl: './lista-beer-cave.component.html',
@@ -19,19 +13,10 @@ export class ListaBeerCaveComponent implements OnInit {
   AWS_DatabaseDropdown: any;
   AWS_DatabaseDatePicker: any;
   public relatorioService;
-<<<<<<< HEAD
-  relatorios: Relatorio[]
-
-  Date_Picker_Model1 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
-  Date_Picker_Model2 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
-
-  @Input() relatorio: Relatorio
-=======
   Date_Picker_Model1 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   Date_Picker_Model2 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   iconchange: any
 
->>>>>>> reueldev
  constructor(
   public cacheSrv: CacheSrvService,
   private dateAdapter: DateAdapter<Date>,
@@ -135,8 +120,6 @@ export class ListaBeerCaveComponent implements OnInit {
 
     ]
   }
-<<<<<<< HEAD
-=======
   iniciarRotacao() {
     console.log(this.iconchange);
 
@@ -150,7 +133,6 @@ export class ListaBeerCaveComponent implements OnInit {
     console.log(this.iconchange);
 
   }
->>>>>>> reueldev
 
   Ativar(item) {
     console.log(item.value)
