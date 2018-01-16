@@ -13,8 +13,8 @@
         <span>
           <mat-form-field>
             <mat-select placeholder="Relatórios">
-              <mat-option *ngFor="let item of relatorioService" [value]="item">
-                {{item.year}} - {{item.months[0].month}}
+              <mat-option >
+                {{relatorio.key}} - {{relatorio.size}}
               </mat-option>
             </mat-select>
           </mat-form-field>

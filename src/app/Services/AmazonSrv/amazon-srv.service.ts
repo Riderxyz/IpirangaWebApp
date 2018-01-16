@@ -5,13 +5,14 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import { log } from 'util';
 import { CacheSrvService } from '../CacheSrv/cache-srv.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class AmazonSrvService {
   data: any
   linkRelatorio = 'https://5t2gsxwp07.execute-api.us-east-1.amazonaws.com/DEV/v1/reportsservices/s3list';
   urlLoginService = 'https://or9jz65n7i.execute-api.us-east-1.amazonaws.com/DEV/v1/cmsservices/socialmedia-wcm-soapauth-post';
-  constructor(private http: Http, public cacheSrv: CacheSrvService) { }
+  constructor(private http: Http, public cacheSrv: CacheSrvService, httpClient: HttpClient) { }
 
   private x_api_key = 'U4exZaLqkX8vQatRYqRxk5r3dHKtYtm82EG5b5uN'
 
@@ -32,6 +33,9 @@ listarRelatorioService() {
   .catch(this.handleError);
 }
 
+relatorios(): Observable<any>{
+  return this.http.get('https://5t2gsxwp07.execute-api.us-east-1.amazonaws.com/DEV/v1/reportsservices/s3list');
+}
 
 
 VerificarLogin(username, senha) {
