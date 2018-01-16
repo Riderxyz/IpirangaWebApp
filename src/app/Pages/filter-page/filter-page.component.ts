@@ -1,39 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CacheSrvService } from './../../Services/CacheSrv/cache-srv.service';
-import { DateAdapter } from '@angular/material';
-import { IMyDpOptions } from 'mydatepicker';
 import { DatePickerComponent } from 'ng2-date-picker';
-//Date Picker Material
-  import { MomentDateAdapter } from '@angular/material-moment-adapter';
-  import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
-  import * as _moment from 'moment';
-  import { default as _rollupMoment } from 'moment';
-  const moment = _rollupMoment || _moment;
-
-  export const MY_FORMATS = {
-    parse: {
-      dateInput: 'MM',
-    },
-    display: {
-      dateInput: 'MM/YYYY',
-      monthYearLabel: 'MMM YYYY',
-      dateA11yLabel: 'LL',
-      monthYearA11yLabel: 'MMMM YYYY',
-    },
-  };
-
 
 @Component({
   selector: 'app-filter-page',
   templateUrl: './filter-page.component.html',
   styleUrls: ['./filter-page.component.scss'],
-  providers: [
-    // `MomentDateAdapter` can be automatically provided by importing `MomentDateModule` in your
-    // application's root module. We provide it at the component level here, due to limitations of
-    // our example generation script.
-    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
-
-    { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS }]
+  
 })
 
 export class FilterPageComponent implements OnInit {
@@ -47,19 +20,11 @@ export class FilterPageComponent implements OnInit {
   @ViewChild('dayPicker') DatePicker_de_Inicio: DatePickerComponent;
   @ViewChild('dayPicker2') DatePicker_de_Fim: DatePickerComponent;
 
-  public myDatePickerOptions: IMyDpOptions = {
-    // other options...
-    dateFormat: 'mm.yyyy',
-    width: '10%',
-  };
 
-
-  constructor(public cacheSrv: CacheSrvService, private dateAdapter: DateAdapter<Date>) {
-    dateAdapter.setLocale('en-in')
+  constructor(public cacheSrv: CacheSrvService) {
+    //dateAdapter.setLocale('en-in')
     this.itemDabase()
-    //this.myDatePickerOptions = 
-
-  }
+    }
 
   ngOnInit() {
   }
@@ -160,7 +125,7 @@ export class FilterPageComponent implements OnInit {
 
   Ativar(item) {
     console.log(item.value)
-    console.log(item.periodo1)
+    console.log(item.periodo1._d)
     console.log(/*this.Date_Picker_Model*/)
   }
 }
