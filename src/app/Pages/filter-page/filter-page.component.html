@@ -1,10 +1,19 @@
 <div>
+<<<<<<< HEAD
   <mat-accordion  *ngFor="let itemExpand of AWS_DatabaseDatePicker" >
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title (click)="iniciarRotacao()">
           <div>
               <i class="fa fa-chevron-right {{iconchange}}" aria-hidden="true"></i> {{itemExpand.titulo}}
+=======
+  <mat-accordion *ngFor="let itemExpand of AWS_DatabaseDatePicker">
+    <mat-expansion-panel hideToggle="true">
+      <mat-expansion-panel-header (click)="iniciarRotacao(itemExpand)" style="height: 48px;padding-right:  0px;">
+        <mat-panel-title class="margintitle">
+          <div class="titleExpansion">
+            <i class="fa fa-chevron-right {{itemExpand.Seta}}" aria-hidden="true"></i> {{itemExpand.titulo}}
+>>>>>>> reueldev
           </div>
         </mat-panel-title>
         <mat-panel-description>
@@ -20,30 +29,29 @@
             </mat-select>
           </mat-form-field>
         </span>
+
+        
         <span class="spanDate">
-          <mat-form-field class="example-full-width">
-            <input matInput [matDatepicker]="picker" [(ngModel)]="itemExpand.periodo1" placeholder="Choose a date">
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-          <a sty (click)="picker.open()" class="btn btn-link">
+          <dp-date-picker [(ngModel)]="itemExpand.periodo1" mode="month" theme="dp-material" #dayPicker></dp-date-picker>
+          <a sty (click)="open(1)" class="btn btn-link">
             <i class="fa fa-2x fa-calendar"></i>
           </a>
 
-
-          <mat-form-field class="example-full-width">
-            <input matInput [matDatepicker]="picker2" [(ngModel)]="itemExpand.periodo2" placeholder="Choose a date">
-            <mat-datepicker #picker2></mat-datepicker>
-          </mat-form-field>
-          <a sty (click)="picker2.open()" class="btn btn-link">
+          <dp-date-picker [(ngModel)]="itemExpand.periodo2" mode="month" theme="dp-material" #dayPicker2></dp-date-picker>
+          <a sty (click)="open(2)" class="btn btn-link">
             <i class="fa fa-2x fa-calendar"></i>
           </a>
         </span>
-        <span class="example-spacer"></span>
+        <span class="example-spacer">
+        </span>
         <div style="text-align:  end;">
           <button mat-raised-button class="relatoriobotao" (click)="Ativar(itemExpand)">Gerar Relatório</button>
         </div>
-
       </mat-toolbar-row>
+
+
+
+
     </mat-expansion-panel>
   </mat-accordion>
 </div>

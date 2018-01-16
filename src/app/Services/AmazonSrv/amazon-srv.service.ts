@@ -12,7 +12,12 @@ export class AmazonSrvService {
   data: any
   linkRelatorio = 'https://5t2gsxwp07.execute-api.us-east-1.amazonaws.com/DEV/v1/reportsservices/s3list';
   urlLoginService = 'https://or9jz65n7i.execute-api.us-east-1.amazonaws.com/DEV/v1/cmsservices/socialmedia-wcm-soapauth-post';
+<<<<<<< HEAD
   constructor(private http: Http, public cacheSrv: CacheSrvService, httpClient: HttpClient) { }
+=======
+  linkRelatorioMOckJSON = [{'application':'3','reports':[{'reportId':'1','years':[{'year':'2018','months':[{'month':'1','files':[{'filename':'quantidade_de_usuarios_1516122610.xlsx'}]}]}]}]}];
+  constructor(private http: Http, public cacheSrv: CacheSrvService) { }
+>>>>>>> reueldev
 
   private x_api_key = 'U4exZaLqkX8vQatRYqRxk5r3dHKtYtm82EG5b5uN'
 
@@ -59,7 +64,11 @@ VerificarLogin(username, senha) {
 
 
   // metodos privados
+<<<<<<< HEAD
   private extractData(res: Response) {
+=======
+  private extractData(res:Response ) {
+>>>>>>> reueldev
     const body = res.json();
     return body || {};
   }

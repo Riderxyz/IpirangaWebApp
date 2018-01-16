@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MyDatePickerModule } from 'mydatepicker';
+
 //Paginas↓
   import { FilterPageComponent } from './Pages/filter-page/filter-page.component';
   import { HistoryPageComponent } from './Pages/history-page/history-page.component';
@@ -58,6 +60,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatStepperModule,
   } from '@angular/material';
   import {CdkTableModule} from '@angular/cdk/table';
+//DatePickers
+  import {DpDatePickerModule} from 'ng2-date-picker';
   import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
   import { DateFormat } from './date-format';
 //Angular tree↓
@@ -89,6 +93,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     FormsModule,
+//DatePickers
+    DpDatePickerModule ,
+    MyDatePickerModule,
 //AngularMaterial↓
   CdkTableModule,
   MatAutocompleteModule,

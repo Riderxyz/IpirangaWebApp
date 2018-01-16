@@ -17,8 +17,6 @@ export class HeaderComponent implements OnInit {
   titulo: any;
   public ifLogged = false;
 
-
-
   constructor(
     public cacheSrv: CacheSrvService,
     private storage: StorageService,
