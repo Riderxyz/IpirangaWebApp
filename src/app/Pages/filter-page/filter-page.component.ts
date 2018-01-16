@@ -10,8 +10,10 @@ import { DatePickerComponent } from 'ng2-date-picker';
 })
 
 export class FilterPageComponent implements OnInit {
-  AWS_DatabaseDropdown: any;
-  AWS_DatabaseDatePicker: any;
+  AWS_DatabaseApps: any;
+  AWS_DatabaseFilters: any;
+  AWS_DatabasePerfil:any;
+  AWS_DatabaseAction:any;
   Date_Picker_Model1 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   Date_Picker_Model2 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   model: any
@@ -28,13 +30,12 @@ export class FilterPageComponent implements OnInit {
   ngOnInit() {
   }
   itemDabase() {
-    this.AWS_DatabaseDropdown = [
+    this.AWS_DatabaseApps = [
       { value: '1', viewValue: 'JetOil' },
       { value: '2', viewValue: 'Padaria' },
       { value: '3', viewValue: 'Beercave' }
     ]
-
-    this.AWS_DatabaseDatePicker = [
+    this.AWS_DatabaseFilters = [
       {
         titulo: '1. Quantidade de Usuario',
         periodo1: this.Date_Picker_Model1.data1,
@@ -93,6 +94,16 @@ export class FilterPageComponent implements OnInit {
         pickerID: "#Picker1"
       },
 
+    ]
+    this.AWS_DatabasePerfil = [
+      { value: 1, viewValue: 'Funcionario' },
+      { value: 2, viewValue: 'Especialista' },
+      { value: 3, viewValue: 'Embaixador' },
+      { value: 4, viewValue: 'Administrador' }
+    ]
+    this.AWS_DatabaseAction = [
+      { value: 1, viewValue: 'Video' },
+      { value: 2, viewValue: 'Fotos' }
     ]
   }
 
