@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CacheSrvService } from './../../Services/CacheSrv/cache-srv.service';
 import { DateAdapter } from '@angular/material';
 import {IMyDpOptions} from 'mydatepicker';
-
+//import {MomentDateAdapter} from '@angular/material-moment-adapter';
+import { MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 @Component({
   selector: 'app-filter-page',
   templateUrl: './filter-page.component.html',
@@ -20,8 +21,6 @@ export class FilterPageComponent implements OnInit {
     dateFormat: 'mm.yyyy',
     width:'10%',
 };
-
-
   constructor(public cacheSrv: CacheSrvService, private dateAdapter: DateAdapter<Date> ) {
     dateAdapter.setLocale('en-in')
     this.itemDabase()
