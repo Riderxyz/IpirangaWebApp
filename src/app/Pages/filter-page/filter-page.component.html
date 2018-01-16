@@ -12,13 +12,17 @@
       </mat-expansion-panel-header>
       <mat-toolbar-row>
         <span>
-          <mat-form-field>
-            <mat-select placeholder="Aplicativo" name="Aplicativo">
-              <mat-option *ngFor="let item of AWS_DatabaseDropdown" [value]="item.value">
-                {{ item.viewValue }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+          <div class="btn-group" dropdown style="width: 10vh;">
+            <button type="button" class="btn btn-primary dropdownNew">{{model}}</button>
+            <button type="button" dropdownToggle class="btn btn-warning dropdownArrow dropdown-toggle dropdown-toggle-split">
+
+            </button>
+            <ul *dropdownMenu class="dropdown-menu" role="menu">
+              <li *ngFor="let item of AWS_DatabaseDropdown" role="menuitem">
+                <a class="dropdown-item" value="1" (click)="teste(item)">{{item.viewValue}}</a>
+              </li>
+            </ul>
+          </div>
         </span>
         <span class="spanDate">
           <dp-date-picker [(ngModel)]="itemExpand.periodo1" mode="month" theme="dp-material" #dayPicker></dp-date-picker>
@@ -30,6 +34,7 @@
           <a sty (click)="open(2)" class="btn btn-link">
             <i class="fa fa-2x fa-calendar"></i>
           </a>
+
         </span>
         <span class="example-spacer">
         </span>
@@ -37,8 +42,6 @@
           <button mat-raised-button class="relatoriobotao" (click)="Ativar(itemExpand)">Gerar Relatório</button>
         </div>
       </mat-toolbar-row>
-
-
 
 
     </mat-expansion-panel>

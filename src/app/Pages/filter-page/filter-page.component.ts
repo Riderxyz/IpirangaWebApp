@@ -14,7 +14,6 @@ export class FilterPageComponent implements OnInit {
   AWS_DatabaseDatePicker: any;
   Date_Picker_Model1 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   Date_Picker_Model2 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
-  iconchange: any
   model: any
 
   @ViewChild('dayPicker') DatePicker_de_Inicio: DatePickerComponent;
@@ -122,10 +121,15 @@ export class FilterPageComponent implements OnInit {
     
   }
 
-
+  teste(item){
+    console.log(item)
+    this.model = item.viewValue
+    console.log(this.model)
+}
   Ativar(item) {
     console.log(item.value)
     console.log(item.periodo1._d)
     console.log(/*this.Date_Picker_Model*/)
   }
+  
 }
