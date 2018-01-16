@@ -1,7 +1,17 @@
-<div>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Personal data
+      </mat-panel-title>
+      <mat-panel-description>
+        Type your name and age
+      </mat-panel-description>
+    </mat-expansion-panel-header>
 
-  <mat-accordion *ngFor="let itemExpand of AWS_DatabaseDatePicker">
-    <mat-expansion-panel>
+    <mat-form-field>
+      <input matInput placeholder="First name">
+    </mat-form-field>
 
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -26,5 +36,3 @@
 
     </mat-expansion-panel>
   </mat-accordion>
-
-</div>

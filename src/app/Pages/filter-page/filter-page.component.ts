@@ -42,50 +42,58 @@ export class FilterPageComponent implements OnInit {
         titulo: '2. Quantidade de publicações por usuario',
         periodo1: this.Date_Picker_Model1.data2,
         periodo2: this.Date_Picker_Model2.data2,
-        pickerID: "#Picker1"
+        pickerID: "#Picker1",
+        Seta: null,
       },
 
       {
         titulo: '3. Quantidade de publicações por perfil',
         periodo1: this.Date_Picker_Model1.data3,
         periodo2: this.Date_Picker_Model2.data3,
-        pickerID: "#Picker1"
+        pickerID: "#Picker1",
+        Seta: null,
       },
       {
         titulo: '4. Quantidade de visualizações por perfil',
         periodo1: this.Date_Picker_Model1.data4,
         periodo2: this.Date_Picker_Model2.data4,
-        pickerID: "#Picker1"
+        pickerID: "#Picker1",
+        Seta: null,
       },
       {
         titulo: '5. Quantidade de curtidas por publicação',
         periodo1: this.Date_Picker_Model1.data5,
         periodo2: this.Date_Picker_Model2.data5,
-        pickerID: "#Picker1"
+        pickerID: "#Picker1",
+        Seta: null,
       },
       {
         titulo: '6. Quantidade de videos assistidos por dia e faixa de horario',
         periodo1: this.Date_Picker_Model1.data6,
         periodo2: this.Date_Picker_Model2.data6,
-        pickerID: "#Picker1"
+        pickerID: "#Picker1",
+        Seta: null,
       },
       {
         titulo: '7. Quantidade de visualizações por video',
         periodo1: this.Date_Picker_Model1.data7,
         periodo2: this.Date_Picker_Model2.data7,
-        pickerID: "#Picker1"
+        pickerID: "#Picker1",
+        Seta: null,
       },
       {
         titulo: '8. Quantidade geral de acessos, independente da interação',
         periodo1: this.Date_Picker_Model1.data8,
         periodo2: this.Date_Picker_Model2.data8,
-        pickerID: "#Picker1"
+        pickerID: "#Picker1",
+        Seta: null,
       },
       {
         titulo: '9. Quantidade de interações por dia e faixa de horario deas publicações',
         periodo1: this.Date_Picker_Model1.data9,
         periodo2: this.Date_Picker_Model2.data9,
-        pickerID: "#Picker1"
+        pickerID: "#Picker1",
+        Seta: null,
       },
 
     ]
