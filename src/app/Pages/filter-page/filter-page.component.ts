@@ -1,34 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CacheSrvService } from './../../Services/CacheSrv/cache-srv.service';
-import { DateAdapter } from '@angular/material';
-import {IMyDpOptions} from 'mydatepicker';
+import { DatePickerComponent } from 'ng2-date-picker';
 
 @Component({
   selector: 'app-filter-page',
   templateUrl: './filter-page.component.html',
-  styleUrls: ['./filter-page.component.scss']
+  styleUrls: ['./filter-page.component.scss'],
+  
 })
+
 export class FilterPageComponent implements OnInit {
   AWS_DatabaseDropdown: any;
   AWS_DatabaseDatePicker: any;
   Date_Picker_Model1 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   Date_Picker_Model2 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   iconchange: any
-  model:any
-  public myDatePickerOptions: IMyDpOptions = {
-    // other options...
-    dateFormat: 'mm.yyyy',
-    width:'10%',
-};
+  model: any
+
+  @ViewChild('dayPicker') DatePicker_de_Inicio: DatePickerComponent;
+  @ViewChild('dayPicker2') DatePicker_de_Fim: DatePickerComponent;
 
 
-  constructor(public cacheSrv: CacheSrvService, private dateAdapter: DateAdapter<Date> ) {
-    dateAdapter.setLocale('en-in')
+  constructor(public cacheSrv: CacheSrvService) {
+    //dateAdapter.setLocale('en-in')
     this.itemDabase()
-
- //this.myDatePickerOptions = 
-
-  }
+    }
 
   ngOnInit() {
   }
@@ -110,22 +106,34 @@ export class FilterPageComponent implements OnInit {
   }
 
   iniciarRotacao(item) {
-    console.log('Ativação da seta',item.Seta);
-    
+    console.log('Ativação da seta', item.Seta);
+
     if (item.Seta == null || item.Seta == 'rotateToClose') {
       item.Seta = 'rotateToOpen'
     } else {
       if (item.Seta == 'rotateToOpen') {
-       item.Seta = 'rotateToClose'
+        item.Seta = 'rotateToClose'
       }
     }
     console.log(item.Seta);
 
   }
 
+  open(date) {
+    console.log('SENDO CLICADO!', date)
+    if (date == 1) {
+      this.DatePicker_de_Inicio.api.open();  
+    }
+    if (date == 2) {
+      this.DatePicker_de_Fim.api.open()
+    }
+    
+  }
+
 
   Ativar(item) {
     console.log(item.value)
+    console.log(item.periodo1._d)
     console.log(/*this.Date_Picker_Model*/)
   }
 }

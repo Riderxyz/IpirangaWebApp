@@ -60,6 +60,8 @@ import { MyDatePickerModule } from 'mydatepicker';
     MatStepperModule,
   } from '@angular/material';
   import {CdkTableModule} from '@angular/cdk/table';
+//DatePickers
+  import {DpDatePickerModule} from 'ng2-date-picker';
   import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
   import { DateFormat } from './date-format';
 //Angular tree↓
@@ -90,6 +92,8 @@ import { MyDatePickerModule } from 'mydatepicker';
   imports: [
     BrowserModule,
     FormsModule,
+//DatePickers
+    DpDatePickerModule ,
     MyDatePickerModule,
 //AngularMaterial↓
   CdkTableModule,
