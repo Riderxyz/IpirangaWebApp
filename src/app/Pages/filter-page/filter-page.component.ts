@@ -1,31 +1,63 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CacheSrvService } from './../../Services/CacheSrv/cache-srv.service';
 import { DateAdapter } from '@angular/material';
-import {IMyDpOptions} from 'mydatepicker';
-//import {MomentDateAdapter} from '@angular/material-moment-adapter';
-import { MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
+import { IMyDpOptions } from 'mydatepicker';
+import { DatePickerComponent } from 'ng2-date-picker';
+//Date Picker Material
+  import { MomentDateAdapter } from '@angular/material-moment-adapter';
+  import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+  import * as _moment from 'moment';
+  import { default as _rollupMoment } from 'moment';
+  const moment = _rollupMoment || _moment;
+
+  export const MY_FORMATS = {
+    parse: {
+      dateInput: 'MM',
+    },
+    display: {
+      dateInput: 'MM/YYYY',
+      monthYearLabel: 'MMM YYYY',
+      dateA11yLabel: 'LL',
+      monthYearA11yLabel: 'MMMM YYYY',
+    },
+  };
+
+
 @Component({
   selector: 'app-filter-page',
   templateUrl: './filter-page.component.html',
-  styleUrls: ['./filter-page.component.scss']
+  styleUrls: ['./filter-page.component.scss'],
+  providers: [
+    // `MomentDateAdapter` can be automatically provided by importing `MomentDateModule` in your
+    // application's root module. We provide it at the component level here, due to limitations of
+    // our example generation script.
+    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+
+    { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS }]
 })
+
 export class FilterPageComponent implements OnInit {
   AWS_DatabaseDropdown: any;
   AWS_DatabaseDatePicker: any;
   Date_Picker_Model1 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   Date_Picker_Model2 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   iconchange: any
-  model:any
+  model: any
+
+  @ViewChild('dayPicker') DatePicker_de_Inicio: DatePickerComponent;
+  @ViewChild('dayPicker2') DatePicker_de_Fim: DatePickerComponent;
+
   public myDatePickerOptions: IMyDpOptions = {
     // other options...
     dateFormat: 'mm.yyyy',
-    width:'10%',
-};
-  constructor(public cacheSrv: CacheSrvService, private dateAdapter: DateAdapter<Date> ) {
+    width: '10%',
+  };
+
+
+  constructor(public cacheSrv: CacheSrvService, private dateAdapter: DateAdapter<Date>) {
     dateAdapter.setLocale('en-in')
     this.itemDabase()
-
- //this.myDatePickerOptions = 
+    //this.myDatePickerOptions = 
 
   }
 
@@ -101,22 +133,34 @@ export class FilterPageComponent implements OnInit {
   }
 
   iniciarRotacao(item) {
-    console.log('Ativação da seta',item.Seta);
-    
+    console.log('Ativação da seta', item.Seta);
+
     if (item.Seta == null || item.Seta == 'rotateToClose') {
       item.Seta = 'rotateToOpen'
     } else {
       if (item.Seta == 'rotateToOpen') {
-       item.Seta = 'rotateToClose'
+        item.Seta = 'rotateToClose'
       }
     }
     console.log(item.Seta);
 
   }
 
+  open(date) {
+    console.log('SENDO CLICADO!', date)
+    if (date == 1) {
+      this.DatePicker_de_Inicio.api.open();  
+    }
+    if (date == 2) {
+      this.DatePicker_de_Fim.api.open()
+    }
+    
+  }
+
 
   Ativar(item) {
     console.log(item.value)
+    console.log(item.periodo1)
     console.log(/*this.Date_Picker_Model*/)
   }
 }
