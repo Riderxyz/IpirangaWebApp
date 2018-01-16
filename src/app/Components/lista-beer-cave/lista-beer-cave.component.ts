@@ -131,25 +131,3 @@ export class ListaBeerCaveComponent implements OnInit {
 
 }
 
-
-// isAnimated = true;
-// autoCollapse = true;
-// expandOnClick = true;
-
-// options = {
-//   allowDrag: false,
-//   allowDrop: true,
-//   expandOnClick: true,
-//   actionMapping: {
-//     mouse: {
-//       dblClick: (tree, node, $event) => {
-//         if (node.hasChildren) TREE_ACTIONS.TOGGLE_EXPANDED(tree, node, $event);
-//       }
-//     },
-//     keys: {
-//       [KEYS.ENTER]: (tree, node, $event) => {
-//         node.expandeAll();
-//       }
-//     }
-//   }
-// }
