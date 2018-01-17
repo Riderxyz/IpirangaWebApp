@@ -1,19 +1,10 @@
 <div>
-<<<<<<< HEAD
-  <mat-accordion  *ngFor="let itemExpand of AWS_DatabaseDatePicker" >
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title (click)="iniciarRotacao()">
-          <div>
-              <i class="fa fa-chevron-right {{iconchange}}" aria-hidden="true"></i> {{itemExpand.titulo}}
-=======
   <mat-accordion *ngFor="let itemExpand of AWS_DatabaseDatePicker">
     <mat-expansion-panel hideToggle="true">
       <mat-expansion-panel-header (click)="iniciarRotacao(itemExpand)" style="height: 48px;padding-right:  0px;">
         <mat-panel-title class="margintitle">
           <div class="titleExpansion">
             <i class="fa fa-chevron-right {{itemExpand.Seta}}" aria-hidden="true"></i> {{itemExpand.titulo}}
->>>>>>> reueldev
           </div>
         </mat-panel-title>
         <mat-panel-description>
@@ -29,7 +20,6 @@
             </mat-select>
           </mat-form-field>
         </span>
-
         
         <span class="spanDate">
           <dp-date-picker [(ngModel)]="itemExpand.periodo1" mode="month" theme="dp-material" #dayPicker></dp-date-picker>
@@ -48,10 +38,6 @@
           <button mat-raised-button class="relatoriobotao" (click)="Ativar(itemExpand)">Gerar Relatório</button>
         </div>
       </mat-toolbar-row>
-
-
-
-
     </mat-expansion-panel>
   </mat-accordion>
 </div>
