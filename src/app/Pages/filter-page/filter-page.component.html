@@ -1,5 +1,5 @@
 <div>
-  <mat-accordion *ngFor="let itemExpand of AWS_DatabaseDatePicker">
+  <mat-accordion *ngFor="let itemExpand of Array_DatabaseFilters">
     <mat-expansion-panel hideToggle="true">
       <mat-expansion-panel-header (click)="iniciarRotacao(itemExpand)" style="height: 48px;padding-right:  0px;">
         <mat-panel-title class="margintitle">
@@ -12,16 +12,20 @@
       </mat-expansion-panel-header>
       <mat-toolbar-row>
         <span>
-          <mat-form-field>
-            <mat-select placeholder="Aplicativo" name="Aplicativo">
-              <mat-option *ngFor="let item of AWS_DatabaseDropdown" [value]="item.value">
-                {{ item.viewValue }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+<!--DropDown dos Apps-->
+            <div class="btn-group dropdowngroup" dropdown>
+                <button type="button" class="btn btn-primary dropdownNew">{{model}}</button>
+                <button type="button" dropdownToggle class="btn btn-warning dropdownArrow dropdown-toggle dropdown-toggle-split">
+                </button>
+                <ul *dropdownMenu class="dropdown-menu" role="menu">
+                  <li *ngFor="let item of  Array_DatabaseApps" role="menuitem">
+                    <a class="dropdown-item" value="1" (click)="teste(item)">{{item.viewValue}}</a>
+                  </li>
+                </ul>
+              </div>
         </span>
-        
-        <span class="spanDate">
+<!--DropDown dos DatePicker-->
+        <span class="spanDate"   *ngIf="itemExpand.MostrarData">
           <dp-date-picker [(ngModel)]="itemExpand.periodo1" mode="month" theme="dp-material" #dayPicker></dp-date-picker>
           <a sty (click)="open(1)" class="btn btn-link">
             <i class="fa fa-2x fa-calendar"></i>
@@ -31,13 +35,65 @@
           <a sty (click)="open(2)" class="btn btn-link">
             <i class="fa fa-2x fa-calendar"></i>
           </a>
+        <dp-time-select config="hours24Format=HH" theme="dp-material"></dp-time-select>
         </span>
-        <span class="example-spacer">
-        </span>
-        <div style="text-align:  end;">
+        <span class="">
+<!--DropDown dos Perfil-->
+
+          <div class="btn-group dropdowngroup" dropdown  *ngIf="itemExpand.MostrarPerfil">
+            <button type="button" class="btn btn-primary dropdownNew">{{model}}</button>
+            <button type="button" dropdownToggle class="btn btn-warning dropdownArrow dropdown-toggle dropdown-toggle-split">
+            </button>
+            <ul *dropdownMenu class="dropdown-menu" role="menu">
+              <li *ngFor="let item of  Array_DatabasePerfil" role="menuitem">
+                <a class="dropdown-item" value="1" (click)="teste(item)">{{item.viewValue}}</a>
+              </li>
+            </ul>
+          </div>
+
+<!--DropDown dos Ações-->
+          <div class="btn-group dropdowngroup" dropdown *ngIf="itemExpand.MostrarAcao">
+              <button type="button" class="btn btn-primary dropdownNew">{{model}}</button>
+              <button type="button" dropdownToggle class="btn btn-warning dropdownArrow dropdown-toggle dropdown-toggle-split">
+  
+              </button>
+              <ul *dropdownMenu class="dropdown-menu" role="menu">
+                <li *ngFor="let item of  Array_DatabaseAction" role="menuitem">
+                  <a class="dropdown-item" value="1" (click)="teste(item)">{{item.viewValue}}</a>
+                </li>
+              </ul>
+            </div>
+<!--DropDown dos Mes de Referencia-->
+        <div class="btn-group dropdowngroup" dropdown *ngIf="itemExpand.MostrarReferencia">
+            <button type="button" class="btn btn-primary dropdownNew">{{model}}</button>
+            <button type="button" dropdownToggle class="btn btn-warning dropdownArrow dropdown-toggle dropdown-toggle-split">
+
+            </button>
+            <ul *dropdownMenu class="dropdown-menu" role="menu">
+              <li *ngFor="let item of Array_DatabaseMesRef" role="menuitem">
+                <a class="dropdown-item" value="1" (click)="teste(item)">{{item.viewValue}}</a>
+              </li>
+            </ul>
+          </div>
+      </span>
+        <span class="example-spacer"> 
+          </span> 
+
+        <div class="form-group" *ngIf="itemExpand.MostrarUsuario">
+            <label for="exampleFormControlInput1">Usario</label>
+            <input type="text" class="form-control" placeholder="Nome">
+          </div>
+          <div class="form-group" *ngIf="itemExpand.MostrarResponsavel">
+              <label for="exampleFormControlInput1">Responsavel</label>
+              <input type="text" class="form-control" placeholder="Nome">
+            </div>
+        <div style="text-align:end;width:50%;">         
+ 
           <button mat-raised-button class="relatoriobotao" (click)="Ativar(itemExpand)">Gerar Relatório</button>
         </div>
       </mat-toolbar-row>
+
+
     </mat-expansion-panel>
   </mat-accordion>
 </div>
