@@ -1,4 +1,8 @@
 export class Relatorio {
-    key:string
-    size:string
+  application: string;
+  reportId: string;
+  year: string;
+  month: string;
+  name: string;
+  url: string;
 }
