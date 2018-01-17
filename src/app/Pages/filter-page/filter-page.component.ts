@@ -104,16 +104,6 @@ export class FilterPageComponent implements OnInit {
     ]
   }
 
-<<<<<<< HEAD
-  iniciarRotacao() {
-    console.log(this.iconchange);
-
-    if (this.iconchange == null || this.iconchange == 'rotateToClose') {
-      this.iconchange = 'rotateToOpen'
-    } else {
-      if (this.iconchange == 'rotateToOpen') {
-        this.iconchange = 'rotateToClose'
-=======
   iniciarRotacao(item) {
     console.log('Ativação da seta', item.Seta);
 
@@ -122,7 +112,6 @@ export class FilterPageComponent implements OnInit {
     } else {
       if (item.Seta == 'rotateToOpen') {
         item.Seta = 'rotateToClose'
->>>>>>> reueldev
       }
     }
     console.log(this.iconchange);

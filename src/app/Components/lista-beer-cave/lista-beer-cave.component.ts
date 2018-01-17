@@ -17,32 +17,15 @@ export class ListaBeerCaveComponent implements OnInit {
   Date_Picker_Model2 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   iconchange: any
 
- constructor(
-  public cacheSrv: CacheSrvService,
-  private dateAdapter: DateAdapter<Date>,
-  private service: AmazonSrvService) {
+  constructor(
+    public cacheSrv: CacheSrvService,
+    private dateAdapter: DateAdapter<Date>,
+    private service: AmazonSrvService) {
     dateAdapter.setLocale('en-in')
     this.itemDabase()
   }
- ngOnInit(): void {
-   this.service.relatorios().subscribe(relatorios =>{
-     this.relatorios = []
-     for (var i in relatorios){
-       if("months" in relatorios[i]){
-        for(var j in relatorios[i].months){
-          if("Keys" in relatorios[i].months[j]){
-            for(var k in relatorios[i].months[j].Keys){
-              var relatorio = new Relatorio();
-              relatorio.key = relatorios[i].months[i].Keys[k].Key.Key;
-              relatorio.size = relatorios[i].months[i].Keys[k].Key.Size;
-              this.relatorios.push(relatorio);
-              console.log(relatorio)
-            }
-          }
-        }
-       }
-     }
-   });
+  ngOnInit(): void {
+
   }
   itemDabase() {
     this.AWS_DatabaseDropdown = [
@@ -140,10 +123,32 @@ export class ListaBeerCaveComponent implements OnInit {
   }
   relatoriosLista() {
     return this.service.listarRelatorioService()
-    .then((res) => this.relatorioService = res)
-    .catch((err) => console.log(err) );
+      .then((res) => this.relatorioService = res)
+      .catch((err) => console.log(err));
   }
 
-
+  // relatorioFor(){
+  //   this.service.relatorios().subscribe(relatorios =>{
+  //     this.relatorios = []
+  //     for (var i in relatorios){
+  //       if("months" in relatorios[i]){
+  //        for(var j in relatorios[i].months){
+  //          if("Keys" in relatorios[i].months[j]){
+  //            for(var k in relatorios[i].months[j].Keys){
+  //              var relatorio = new Relatorio();
+  //              relatorio.key = relatorios[i].months[i].Keys[k].Key.Key;
+  //              relatorio.size = relatorios[i].months[i].Keys[k].Key.Size;
+  //              this.relatorios.push(relatorio);
+  //              console.log(relatorio)
+  //            }
+  //          }
+  //        }
+  //       }
+  //     }
+  //   });
 }
+
+
+
+
 
