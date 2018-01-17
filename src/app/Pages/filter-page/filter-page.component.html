@@ -13,18 +13,14 @@
       <mat-toolbar-row>
         <span>
 <!--DropDown dos Apps-->
-            <div class="btn-group dropdowngroup" dropdown>
-                <button type="button" class="btn btn-primary dropdownNew">{{model}}</button>
-                <button type="button" dropdownToggle class="btn btn-warning dropdownArrow dropdown-toggle dropdown-toggle-split">
-                </button>
-                <ul *dropdownMenu class="dropdown-menu" role="menu">
-                  <li *ngFor="let item of  Array_DatabaseApps" role="menuitem">
-                    <a class="dropdown-item" value="1" (click)="teste(item)">{{item.viewValue}}</a>
-                  </li>
-                </ul>
-              </div>
+<div class="form-group dropdownArrow newSelect">
+    <label for="DropDownApps">Aplicativo</label>
+    <select class="form-control" id="DropDownApps">
+      <option *ngFor="let item of  Array_DatabaseApps">{{item.viewValue}}</option>
+    </select>
+  </div>
         </span>
-<!--DropDown dos DatePicker-->
+<!--DatePickers-->
         <span class="spanDate" *ngIf="itemExpand.MostrarData">
           <dp-date-picker [(ngModel)]="itemExpand.periodo1" mode="month" theme="dp-material" #dayPicker></dp-date-picker>
           <a sty (click)="open(1)" class="btn btn-link">
@@ -35,46 +31,36 @@
           <a sty (click)="open(2)" class="btn btn-link">
             <i class="fa fa-2x fa-calendar"></i>
           </a>
-        <dp-time-select config="hours24Format=HH" theme="dp-material"></dp-time-select>
         </span>
-        <span class="">
+        <span style="display:  flex;">
 <!--DropDown dos Perfil-->
+          <div class="form-group dropdownArrow newSelect" *ngIf="itemExpand.MostrarPerfil">
+              <label for="DropDownPerfil">Perfil</label>
+              <select class="form-control" id="DropDownPerfil">
+                <option *ngFor="let item of  Array_DatabasePerfil">{{item.viewValue}}</option>
+              </select>
+            </div>
 
-          <div class="btn-group dropdowngroup" dropdown  *ngIf="itemExpand.MostrarPerfil">
-            <button type="button" class="btn btn-primary dropdownNew">{{model}}</button>
-            <button type="button" dropdownToggle class="btn btn-warning dropdownArrow dropdown-toggle dropdown-toggle-split">
-            </button>
-            <ul *dropdownMenu class="dropdown-menu" role="menu">
-              <li *ngFor="let item of  Array_DatabasePerfil" role="menuitem">
-                <a class="dropdown-item" value="1" (click)="teste(item)">{{item.viewValue}}</a>
-              </li>
-            </ul>
-          </div>
 
 <!--DropDown dos Ações-->
-          <div class="btn-group dropdowngroup" dropdown *ngIf="itemExpand.MostrarAcao">
-              <button type="button" class="btn btn-primary dropdownNew">{{model}}</button>
-              <button type="button" dropdownToggle class="btn btn-warning dropdownArrow dropdown-toggle dropdown-toggle-split">
+            <div class="form-group dropdownArrow newSelect" *ngIf="itemExpand.MostrarAcao">
+                <label for="DropDownPerfil">Ações</label>
+                <select class="form-control" id="DropDownPerfil">
+                  <option *ngFor="let item of  Array_DatabaseAction">{{item.viewValue}}</option>
+                </select>
+              </div>
   
-              </button>
-              <ul *dropdownMenu class="dropdown-menu" role="menu">
-                <li *ngFor="let item of  Array_DatabaseAction" role="menuitem">
-                  <a class="dropdown-item" value="1" (click)="teste(item)">{{item.viewValue}}</a>
-                </li>
-              </ul>
-            </div>
-<!--DropDown dos Mes de Referencia-->
-        <div class="btn-group dropdowngroup" dropdown *ngIf="itemExpand.MostrarReferencia">
-            <button type="button" class="btn btn-primary dropdownNew">{{model}}</button>
-            <button type="button" dropdownToggle class="btn btn-warning dropdownArrow dropdown-toggle dropdown-toggle-split">
+  
 
-            </button>
-            <ul *dropdownMenu class="dropdown-menu" role="menu">
-              <li *ngFor="let item of Array_DatabaseMesRef" role="menuitem">
-                <a class="dropdown-item" value="1" (click)="teste(item)">{{item.viewValue}}</a>
-              </li>
-            </ul>
-          </div>
+            
+<!--DropDown dos Mes de Referencia-->
+          <div class="form-group dropdownArrow newSelect" *ngIf="itemExpand.MostrarAcao">
+              <label for="DropDownPerfil">Mes de Referencia</label>
+              <select class="form-control" id="DropDownPerfil">
+                <option *ngFor="let item of  Array_DatabaseMesRef">{{item.viewValue}}</option>
+              </select>
+            </div>
+
       </span>
         <span class="example-spacer"> 
           </span> 
@@ -93,6 +79,7 @@
         </div>
       </mat-toolbar-row>
 
+      
 
     </mat-expansion-panel>
   </mat-accordion>

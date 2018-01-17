@@ -41,21 +41,21 @@ export class FilterPageComponent implements OnInit {
         titulo: '1. Quantidade de Usuario',
         periodo1: this.Date_Picker_Model1.data1,
         periodo2: this.Date_Picker_Model2.data1,
-      //Dropdowns control
+        //Dropdowns control
         Seta: null,
         MostrarData: true,
-        MostrarUsuario: true,
+        MostrarUsuario: false,
         MostrarAcao: false,
         MostrarPerfil: false,
-        MostrarResponsavel: true,
-        MostrarReferencia: true
-        
+        MostrarResponsavel: false,
+        MostrarReferencia: false
+
       },
       {
         titulo: '2. Quantidade de publicações por usuario',
         periodo1: this.Date_Picker_Model1.data2,
         periodo2: this.Date_Picker_Model2.data2,
-      //Dropdowns control
+        //Dropdowns control
         MostrarData: true,
         MostrarUsuario: true,
         MostrarAcao: true,
@@ -68,19 +68,19 @@ export class FilterPageComponent implements OnInit {
         titulo: '3. Quantidade de publicações por perfil',
         periodo1: this.Date_Picker_Model1.data3,
         periodo2: this.Date_Picker_Model2.data3,
-      //Dropdowns control
+        //Dropdowns control
         MostrarData: false,
         MostrarUsuario: false,
         MostrarAcao: true,
         MostrarPerfil: true,
         MostrarResponsavel: false,
-        MostrarReferencia: false
+        MostrarReferencia: true
       },
       {
         titulo: '4. Quantidade de visualizações por perfil',
         periodo1: this.Date_Picker_Model1.data4,
         periodo2: this.Date_Picker_Model2.data4,
-      //Dropdowns control
+        //Dropdowns control
         MostrarData: true,
         MostrarUsuario: false,
         MostrarAcao: false,
@@ -92,55 +92,55 @@ export class FilterPageComponent implements OnInit {
         titulo: '5. Quantidade de curtidas por publicação',
         periodo1: this.Date_Picker_Model1.data5,
         periodo2: this.Date_Picker_Model2.data5,
-      //Dropdowns control
-        MostrarData: false,
+        //Dropdowns control
+        MostrarData: true,
         MostrarUsuario: false,
         MostrarAcao: false,
         MostrarPerfil: false,
-        MostrarResponsavel: false,
+        MostrarResponsavel: true,
         MostrarReferencia: false
       },
       {
         titulo: '6. Quantidade de videos assistidos por dia e faixa de horario',
         periodo1: this.Date_Picker_Model1.data6,
         periodo2: this.Date_Picker_Model2.data6,
-      //Dropdowns control
+        //Dropdowns control
         MostrarData: false,
         MostrarUsuario: false,
         MostrarAcao: false,
         MostrarPerfil: false,
         MostrarResponsavel: false,
-        MostrarReferencia: false,
+        MostrarReferencia: true,
       },
       {
         titulo: '7. Quantidade de visualizações por video',
         periodo1: this.Date_Picker_Model1.data7,
         periodo2: this.Date_Picker_Model2.data7,
-      //Dropdowns control
-        MostrarData: true,
-        MostrarUsuario: false,
-        MostrarAcao: false,
-        MostrarPerfil: false,
-        MostrarResponsavel: false,
-        MostrarReferencia: false,
-      },
-      {
-        titulo: '8. Quantidade geral de acessos, independente da interação',
-        periodo1: this.Date_Picker_Model1.data8,
-        periodo2: this.Date_Picker_Model2.data8,
-      //Dropdowns control
+        //Dropdowns control
         MostrarData: false,
         MostrarUsuario: false,
         MostrarAcao: false,
         MostrarPerfil: false,
         MostrarResponsavel: false,
-        MostrarReferencia: false,
+        MostrarReferencia: true,
+      },
+      {
+        titulo: '8. Quantidade geral de acessos, independente da interação',
+        periodo1: this.Date_Picker_Model1.data8,
+        periodo2: this.Date_Picker_Model2.data8,
+        //Dropdowns control
+        MostrarData: false,
+        MostrarUsuario: false,
+        MostrarAcao: false,
+        MostrarPerfil: false,
+        MostrarResponsavel: false,
+        MostrarReferencia: true,
       },
       {
         titulo: '9. Quantidade de interações por dia e faixa de horario deas publicações',
         periodo1: this.Date_Picker_Model1.data9,
         periodo2: this.Date_Picker_Model2.data9,
-      //Dropdowns control
+        //Dropdowns control
         MostrarData: false,
         MostrarUsuario: false,
         MostrarAcao: false,
@@ -173,7 +173,7 @@ export class FilterPageComponent implements OnInit {
       { value: 10, viewValue: 'Outubro' },
       { value: 11, viewValue: 'Novembro' },
       { value: 12, viewValue: 'Dezembro' },
-      
+
 
     ]
   }
@@ -191,7 +191,7 @@ export class FilterPageComponent implements OnInit {
     console.log(item.Seta);
 
   }
-  
+
 
   open(date) {
     console.log('SENDO CLICADO!', date)
