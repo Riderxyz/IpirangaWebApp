@@ -20,6 +20,7 @@ export class ListaBeerCaveComponent implements OnInit {
   AWS_DatabaseDropdown: any;
   AWS_DatabaseDatePicker: any;
   public relatorioService;
+  public filesReport = [];
 
   Date_Picker_Model1 = {
     data1: null,
@@ -211,8 +212,10 @@ export class ListaBeerCaveComponent implements OnInit {
           files = d.reports[reportId].years[year].months;
           if(file == file){
             files = d.reports[reportId].years[year].months[month].files;
+            this.filesReport = files;
           }
           console.log("ARQUIVOS: ",files);
+          console.log("FILES REPORT: ",this.filesReport);
         });
 
       })
