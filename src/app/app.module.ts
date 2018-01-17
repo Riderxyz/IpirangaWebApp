@@ -4,8 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MyDatePickerModule } from 'mydatepicker';
-
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
 //Paginas↓
   import { FilterPageComponent } from './Pages/filter-page/filter-page.component';
   import { HistoryPageComponent } from './Pages/history-page/history-page.component';
@@ -42,9 +41,6 @@ import { MyDatePickerModule } from 'mydatepicker';
     MatInputModule,
     MatListModule,
     MatMenuModule,
-    MatPaginatorModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
     MatRadioModule,
     MatRippleModule,
     MatSelectModule,
@@ -60,10 +56,9 @@ import { MyDatePickerModule } from 'mydatepicker';
     MatStepperModule,
   } from '@angular/material';
   import {CdkTableModule} from '@angular/cdk/table';
-//DatePickers
+//DatePickers↓
   import {DpDatePickerModule} from 'ng2-date-picker';
-  import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
-  import { DateFormat } from './date-format';
+
 //Angular tree↓
   import { TreeModule } from 'angular-tree-component';
   import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-component';
@@ -93,9 +88,10 @@ import { MyDatePickerModule } from 'mydatepicker';
   imports: [
     BrowserModule,
     FormsModule,
-//DatePickers
-    DpDatePickerModule ,
-    MyDatePickerModule,
+//Ng's↓
+    BsDropdownModule.forRoot(),
+//DatePickers↓
+    DpDatePickerModule,
 //AngularMaterial↓
   CdkTableModule,
   MatAutocompleteModule,
@@ -114,9 +110,6 @@ import { MyDatePickerModule } from 'mydatepicker';
   MatListModule,
   MatMenuModule,
   MatNativeDateModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
   MatRadioModule,
   MatRippleModule,
   MatSelectModule,
@@ -137,7 +130,10 @@ import { MyDatePickerModule } from 'mydatepicker';
     HttpModule,
     AppRoutingModule
   ],
-providers:[CacheSrvService, AmazonSrvService, StorageService,{provide: DateAdapter, useClass: DateFormat}],
+providers:[
+  CacheSrvService,
+  AmazonSrvService,
+  StorageService],
  bootstrap: [AppComponent]
 })
 export class AppModule { }

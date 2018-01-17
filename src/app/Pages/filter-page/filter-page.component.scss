@@ -4,115 +4,98 @@
 
 }
 
-.spanDate {
-  margin-left: 2%;
-}
-
 .example-spacer {
   flex: 1 1 auto;
 }
 
-.iconchange {
-  margin-right: 5px;
+.fa-chevron-right {
+  color: gold !important;
 }
 
-.bordaInput {
-  border-color: red;
-  border-width: 1px;
+.fa-calendar {
+  color: #0088d9 !important;
+}
+
+::ng-deep dp-date-picker.dp-material .dp-picker-input {
   border-style: solid;
+  border-width: 1px;
+  border-radius: 1vh;
 }
 
-.fa-chevron-right{
-  color: gold !important
+.newSelect{
+
+  width: 15vh !important;
+  margin-right: 1vh !important;
 }
 
-.fa-calendar{
-  color: #0088d9 !important
-}
-
-.titleExpansion{
-  color: #6c98aa;
-  font-family: 'Ubuntu', serif;
-}
-
-/* .underlinha{
-border-bottom-style: solid;
-width: 71%;
-border-width: 1px;
+.form-group{
+width:  100%;
+text-align:  start;
 position: relative;
-margin-right: 0px;
-margin-bottom: 0px;
+margin-bottom:  3vh;
+margin-right: 1%
 }
-.margintitle{
-  margin-right:  0px;
-} */
-
 
 .rotateToOpen {
   margin: 5% auto;
 
   -webkit-animation-name: rotateToOpen;
-  -webkit-animation-duration: 0.3s;
+  -webkit-animation-duration: .3s;
   -webkit-animation-timing-function: ease;
   -webkit-animation-delay: 0s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-direction: normal;
   -webkit-animation-fill-mode: forwards;
- 
+
   animation-name: rotateToOpen;
-  animation-duration: 0.3s;
+  animation-duration: .3s;
   animation-timing-function: ease;
   animation-delay: 0s;
   animation-iteration-count: 1;
   animation-direction: normal;
   animation-fill-mode: forwards;
- 
- }
- 
- @-webkit-keyframes rotateToOpen {
-   100%{
-   -webkit-transform: rotate(90deg);
-   transform: rotate(90deg);
-   }
- }
- 
- @keyframes rotateToOpen {
-   100%{
-   transform: rotate(90deg);
-   }
- }
+
+}
+@-webkit-keyframes rotateToOpen {
+  100% {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+@keyframes rotateToOpen {
+  100% {
+    transform: rotate(90deg);
+  }
+}
 
 .rotateToClose {
   margin: 5% auto;
 
   -webkit-animation-name: rotateToClose;
-  -webkit-animation-duration: 0.3s;
+  -webkit-animation-duration: .3s;
   -webkit-animation-timing-function: ease;
   -webkit-animation-delay: 0s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-direction: reverse;
   -webkit-animation-fill-mode: forwards;
- 
+
   animation-name: rotateToClose;
-  animation-duration: 0.3s;
+  animation-duration: .3s;
   animation-timing-function: ease;
   animation-delay: 0s;
   animation-iteration-count: 1;
   animation-direction: reverse;
   animation-fill-mode: forwards;
- 
- }
- 
- @-webkit-keyframes rotateToClose {
-   100%{
-   -webkit-transform: rotate(90deg);
-   transform: rotate(90deg);
-   }
- }
- 
- @keyframes rotateToClose {
-   100%{
-   transform: rotate(90deg);
-   }
- }
- 
+
+}
+@-webkit-keyframes rotateToClose {
+  100% {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+@keyframes rotateToClose {
+  100% {
+    transform: rotate(90deg);
+  }
+}
