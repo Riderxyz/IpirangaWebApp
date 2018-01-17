@@ -25,8 +25,8 @@
         <span>
           <mat-form-field>
             <mat-select placeholder="Relatórios">
-              <mat-option >
-                {{relatorio.key}} - {{relatorio.size}}
+              <mat-option *ngFor="let item of listarelatoriosmock" [value]="item">
+                {{item.application}} - {{item.reports[0].years[0].year}} - {{item.reports[0].years[0].months[0].month}}
               </mat-option>
             </mat-select>
           </mat-form-field>
