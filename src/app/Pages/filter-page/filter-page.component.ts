@@ -49,7 +49,7 @@ export class FilterPageComponent implements OnInit {
         MostrarPerfil: false,
         MostrarResponsavel: true,
         MostrarReferencia: true
-        
+
       },
       {
         titulo: '2. Quantidade de publicações por usuario',
@@ -173,7 +173,7 @@ export class FilterPageComponent implements OnInit {
       { value: 10, viewValue: 'Outubro' },
       { value: 11, viewValue: 'Novembro' },
       { value: 12, viewValue: 'Dezembro' },
-      
+
 
     ]
   }
@@ -188,10 +188,9 @@ export class FilterPageComponent implements OnInit {
         item.Seta = 'rotateToClose'
       }
     }
-    console.log(this.iconchange);
 
   }
-  
+
 
   open(date) {
     console.log('SENDO CLICADO!', date)

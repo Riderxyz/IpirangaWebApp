@@ -59,7 +59,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
 //DatePickers↓
   import {DpDatePickerModule} from 'ng2-date-picker';
 //Selects↓
-  import {SelectModule} from 'ng2-select'
+  // import {SelectModule} from 'ng2-select';
 //Angular tree↓
   import { TreeModule } from 'angular-tree-component';
   import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-component';
@@ -91,7 +91,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
     FormsModule,
 //Ng's↓
     BsDropdownModule.forRoot(),
-    SelectModule,
+    // SelectModule,
 //DatePickers↓
     DpDatePickerModule,
 //AngularMaterial↓
@@ -133,8 +133,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
     AppRoutingModule
   ],
 providers:[
-  CacheSrvService, 
-  AmazonSrvService, 
+  CacheSrvService,
+  AmazonSrvService,
   StorageService],
  bootstrap: [AppComponent]
 })
