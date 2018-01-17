@@ -1,4 +1,3 @@
-import { RelatoriosSerAmz } from './../../Services/AmazonSrv/relatoriosAmz.service';
 import { AmazonSrvService } from './../../Services/AmazonSrv/amazon-srv.service';
 import { Component, OnInit, NgModule } from '@angular/core';
 import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-component';
