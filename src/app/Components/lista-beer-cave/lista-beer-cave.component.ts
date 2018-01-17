@@ -1,8 +1,11 @@
+import { RelatoriosSerAmz } from './../../Services/AmazonSrv/relatoriosAmz.service';
 import { AmazonSrvService } from './../../Services/AmazonSrv/amazon-srv.service';
 import { Component, OnInit, NgModule } from '@angular/core';
 import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-component';
 import { CacheSrvService } from './../../Services/CacheSrv/cache-srv.service';
 import { DateAdapter } from '@angular/material';
+import { Input } from '@angular/core/src/metadata/directives';
+import { Relatorio } from '../../Control/relatorioModel';
 @Component({
   selector: 'app-lista-beer-cave',
   templateUrl: './lista-beer-cave.component.html',
@@ -14,10 +17,12 @@ export class ListaBeerCaveComponent implements OnInit {
   AWS_DatabaseDatePicker: any;
   public relatorioService;
   listarelatoriosmock = this.service.linkRelatorioMockJSON;
+
   Date_Picker_Model1 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   Date_Picker_Model2 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   iconchange: any
 
+  // @Input() relatorio: Relatorio
   constructor(
     public cacheSrv: CacheSrvService,
     private dateAdapter: DateAdapter<Date>,
@@ -26,7 +31,7 @@ export class ListaBeerCaveComponent implements OnInit {
     this.itemDabase()
   }
   ngOnInit(): void {
-
+    this.relatoriosLista();
   }
   itemDabase() {
     this.AWS_DatabaseDropdown = [
@@ -124,7 +129,10 @@ export class ListaBeerCaveComponent implements OnInit {
   }
   relatoriosLista() {
     return this.service.listarRelatorioService()
-      .then((res) => this.relatorioService = res)
+      .then((res) => {
+        this.relatorioService = res;
+        console.log(res);
+      })
       .catch((err) => console.log(err));
   }
 
