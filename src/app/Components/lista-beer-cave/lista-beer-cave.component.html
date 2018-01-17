@@ -1,18 +1,5 @@
 <mat-accordion *ngFor="let itemExpand of AWS_DatabaseDatePicker">
   <mat-expansion-panel>
-    <!-- <mat-expansion-panel-header>
-      <mat-panel-title>
-        Personal data
-      </mat-panel-title>
-      <mat-panel-description>
-        Type your name and age
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-
-    <mat-form-field>
-      <input matInput placeholder="First name">
-    </mat-form-field> -->
-
       <mat-expansion-panel-header>
         <mat-panel-title>
           <div>
@@ -25,8 +12,8 @@
         <span>
           <mat-form-field>
             <mat-select placeholder="Relatórios">
-              <mat-option *ngFor="let item of listarelatoriosmock" [value]="item">
-                {{item.application}} - {{item.reports[0].years[0].year}} - {{item.reports[0].years[0].months[0].month}}
+              <mat-option *ngFor="let item of relatorioService" [value]="item">
+                {{item.application}}
               </mat-option>
             </mat-select>
           </mat-form-field>
