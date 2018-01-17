@@ -191,6 +191,7 @@ export class FilterPageComponent implements OnInit {
     console.log(this.iconchange);
 
   }
+  
 
   open(date) {
     console.log('SENDO CLICADO!', date)

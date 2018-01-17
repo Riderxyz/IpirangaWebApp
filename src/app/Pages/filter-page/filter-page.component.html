@@ -25,7 +25,7 @@
               </div>
         </span>
 <!--DropDown dos DatePicker-->
-        <span class="spanDate"   *ngIf="itemExpand.MostrarData">
+        <span class="spanDate" *ngIf="itemExpand.MostrarData">
           <dp-date-picker [(ngModel)]="itemExpand.periodo1" mode="month" theme="dp-material" #dayPicker></dp-date-picker>
           <a sty (click)="open(1)" class="btn btn-link">
             <i class="fa fa-2x fa-calendar"></i>
