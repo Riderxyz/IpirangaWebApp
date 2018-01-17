@@ -12,19 +12,19 @@
       </mat-expansion-panel-header>
       <mat-toolbar-row>
         <span>
-          <div class="btn-group" dropdown style="width: 10vh;">
-            <button type="button" class="btn btn-primary dropdownNew">{{model}}</button>
-            <button type="button" dropdownToggle class="btn btn-warning dropdownArrow dropdown-toggle dropdown-toggle-split">
-
-            </button>
-            <ul *dropdownMenu class="dropdown-menu" role="menu">
-              <li *ngFor="let item of AWS_DatabaseApps" role="menuitem">
-                <a class="dropdown-item" value="1" (click)="teste(item)">{{item.viewValue}}</a>
-              </li>
-            </ul>
-          </div>
+<!--DropDown dos Apps-->
+            <div class="btn-group dropdowngroup" dropdown>
+                <button type="button" class="btn btn-primary dropdownNew">{{model}}</button>
+                <button type="button" dropdownToggle class="btn btn-warning dropdownArrow dropdown-toggle dropdown-toggle-split">
+                </button>
+                <ul *dropdownMenu class="dropdown-menu" role="menu">
+                  <li *ngFor="let item of AWS_DatabaseApps" role="menuitem">
+                    <a class="dropdown-item" value="1" (click)="teste(item)">{{item.viewValue}}</a>
+                  </li>
+                </ul>
+              </div>
         </span>
-        <span class="spanDate">
+        <span class="spanDate"   *ngIf="itemExpand.MostrarData">
           <dp-date-picker [(ngModel)]="itemExpand.periodo1" mode="month" theme="dp-material" #dayPicker></dp-date-picker>
           <a sty (click)="open(1)" class="btn btn-link">
             <i class="fa fa-2x fa-calendar"></i>
@@ -37,11 +37,11 @@
 
         </span>
         <span class="">
+<!--DropDown dos Perfil-->
 
-          <div class="btn-group dropdowngroup" dropdown>
+          <div class="btn-group dropdowngroup" dropdown  *ngIf="itemExpand.MostrarPerfil">
             <button type="button" class="btn btn-primary dropdownNew">{{model}}</button>
             <button type="button" dropdownToggle class="btn btn-warning dropdownArrow dropdown-toggle dropdown-toggle-split">
-
             </button>
             <ul *dropdownMenu class="dropdown-menu" role="menu">
               <li *ngFor="let item of AWS_DatabasePerfil" role="menuitem">
@@ -50,25 +50,26 @@
             </ul>
           </div>
 
-
-          <div class="btn-group dropdowngroup" dropdown style="width: 10vh;">
-            <button type="button" class="btn btn-primary dropdownNew">{{model}}</button>
-            <button type="button" dropdownToggle class="btn btn-warning dropdownArrow dropdown-toggle dropdown-toggle-split">
-
-            </button>
-            <ul *dropdownMenu class="dropdown-menu" role="menu">
-              <li *ngFor="let item of AWS_DatabaseAction" role="menuitem">
-                <a class="dropdown-item" value="1" (click)="teste(item)">{{item.viewValue}}</a>
-              </li>
-            </ul>
-          </div>
+<!--DropDown dos Ações-->
+          <div class="btn-group dropdowngroup" dropdown *ngIf="itemExpand.MostrarAcao">
+              <button type="button" class="btn btn-primary dropdownNew">{{model}}</button>
+              <button type="button" dropdownToggle class="btn btn-warning dropdownArrow dropdown-toggle dropdown-toggle-split">
+  
+              </button>
+              <ul *dropdownMenu class="dropdown-menu" role="menu">
+                <li *ngFor="let item of AWS_DatabaseAction" role="menuitem">
+                  <a class="dropdown-item" value="1" (click)="teste(item)">{{item.viewValue}}</a>
+                </li>
+              </ul>
+            </div>
         </span>
-        <div style="text-align:end;width:100%;">
 
-                <div class="form-group">
-                  <label for="exampleFormControlInput1">Email address</label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                </div>
+
+        <div class="form-group" *ngIf="itemExpand.MostrarUsuario">
+            <label for="exampleFormControlInput1">Usario</label>
+            <input type="text" class="form-control" placeholder="Nome">
+          </div>
+        <div style="text-align:end;width:50%;">         
  
           <button mat-raised-button class="relatoriobotao" (click)="Ativar(itemExpand)">Gerar Relatório</button>
         </div>
