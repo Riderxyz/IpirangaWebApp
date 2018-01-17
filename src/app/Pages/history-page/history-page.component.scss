@@ -24,8 +24,8 @@
   }
   //tem que ser editado por Reuel Jr.
   .menu-principal  :ng-deep .mat-tab-label{
-      width: 70%;
-      margin-left: 15% !important;
+      width: 100%;
+      margin-left: 100% !important;
       padding: 20px;
   }
 
@@ -34,8 +34,8 @@
     color: #06c;
     padding: 20px !important;
     //border-bottom: 3px solid #f6d43c;
-    width: 70%;
-    margin: auto 15% !important;
+    width: 100%;
+    margin: auto 100% !important;
     text-align: center !important;
   }
   ::ng-deep .historico .mat-tab-label.mat-tab-label-active{
