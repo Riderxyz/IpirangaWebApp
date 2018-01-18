@@ -148,6 +148,18 @@ export class FilterPageComponent implements OnInit {
         MostrarResponsavel: false,
         MostrarReferencia: false,
       },
+      {
+        titulo: '10. Quantidade de interações por dia e faixa de horario deas publicações',
+        periodo1: this.Date_Picker_Model1.data9,
+        periodo2: this.Date_Picker_Model2.data9,
+        //Dropdowns control
+        MostrarData: false,
+        MostrarUsuario: false,
+        MostrarAcao: false,
+        MostrarPerfil: false,
+        MostrarResponsavel: false,
+        MostrarReferencia: false,
+      },
 
     ]
     this.Array_DatabasePerfil = [
