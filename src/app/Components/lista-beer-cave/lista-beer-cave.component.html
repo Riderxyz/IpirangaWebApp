@@ -1,20 +1,24 @@
-<div class="beer">
-  <!-- <tree-root [nodes]="opcao" [options]="options"></tree-root> -->
-  <br/>
+<mat-accordion *ngFor="let itemExpand of AWS_DatabaseDatePicker">
+    <mat-expansion-panel >
+        <mat-expansion-panel-header >
+          <mat-panel-title >
+            <div>
+              {{itemExpand.titulo}}
+            </div>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
 
-    <table>
-    <tr>
-      <td align=left>Relatorio</td>
-    </tr>
-    <tr *ngFor="let item of relatorioService">
-<<<<<<< HEAD
-      <td>{{item.year}}</td>
-      <!-- <td>{{item | json}}</td> -->
-=======
-      <td align=left >{{item.year}}</td>
-       <!-- <td>{{item | json}}</td> -->
->>>>>>> reueldev
-    </tr>
-  </table>
+        <mat-toolbar-row>
+          <span>
+            <mat-form-field>
+              <mat-select placeholder="Relatórios">
+                <mat-option *ngFor="let item of filesReport" [value]="item">
+                  <div  >{{item.file.name}} - {{item.file.lastModified}}</div>
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </span>
+        </mat-toolbar-row>
 
-</div>
+      </mat-expansion-panel>
+    </mat-accordion>

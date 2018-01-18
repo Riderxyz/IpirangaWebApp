@@ -28,6 +28,7 @@ export class HeaderComponent implements OnInit {
     if (this.titulo == null) {
       this.titulo = 'Teste';
     }
+
     let token = this.storage.readSessionStorage('token_user')
     if (token) {
       this.ifLogged = true;

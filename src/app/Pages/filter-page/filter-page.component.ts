@@ -188,7 +188,6 @@ export class FilterPageComponent implements OnInit {
         item.Seta = 'rotateToClose'
       }
     }
-    console.log(item.Seta);
 
   }
 

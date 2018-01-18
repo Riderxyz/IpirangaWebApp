@@ -22,6 +22,26 @@
     size: 30px;
     // padding: 0px 180px 0px 160px
   }
+  //tem que ser editado por Reuel Jr.
+  .menu-principal  :ng-deep .mat-tab-label{
+      width: 70%;
+      margin-left: 15% !important;
+      padding: 20px;
+  }
+
+  ::ng-deep .historico .mat-tab-label{
+    background: transparent !important;
+    color: #06c;
+    padding: 20px !important;
+    //border-bottom: 3px solid #f6d43c;
+    width: 10%;
+    margin: auto 15% !important;
+    text-align: center !important;
+  }
+  ::ng-deep .historico .mat-tab-label.mat-tab-label-active{
+    border-bottom: 4px solid #f6d43c;
+
+  }
 
   ::ng-deep .mat-tab-label.mat-tab-label-active{
     width: 80%;

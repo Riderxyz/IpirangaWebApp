@@ -4,11 +4,12 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//NGX Bootstrap 
+//NGX Bootstrap
   import {
-    BsDropdownModule, 
+
+    BsDropdownModule,
     CollapseModule,
-    TabsModule  
+    TabsModule
   } from 'ngx-bootstrap'
 //Paginas↓
   import { FilterPageComponent } from './Pages/filter-page/filter-page.component';
@@ -67,6 +68,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Angular tree↓
   import { TreeModule } from 'angular-tree-component';
   import { TREE_ACTIONS, KEYS, IActionMapping, ITreeOptions } from 'angular-tree-component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -137,8 +139,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule
   ],
 providers:[
-  CacheSrvService, 
-  AmazonSrvService, 
+  CacheSrvService,
+  AmazonSrvService,
   StorageService],
  bootstrap: [AppComponent]
 })

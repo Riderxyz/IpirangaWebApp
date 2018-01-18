@@ -3,13 +3,16 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
+import { log } from 'util';
 import { CacheSrvService } from '../CacheSrv/cache-srv.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class AmazonSrvService {
   data: any
   linkRelatorio = 'https://5t2gsxwp07.execute-api.us-east-1.amazonaws.com/DEV/v1/reportsservices/s3list';
   urlLoginService = 'https://or9jz65n7i.execute-api.us-east-1.amazonaws.com/DEV/v1/cmsservices/socialmedia-wcm-soapauth-post';
+  // linkRelatorioMockJSON = [{'application':'3','reports':[{'reportId':'1','years':[{'year':'2018','months':[{'month':'1','files':[{'filename':'quantidade_de_usuarios_1516122610.xlsx'}]}]}]}]}];
   constructor(private http: Http, public cacheSrv: CacheSrvService) { }
 
   private x_api_key = 'U4exZaLqkX8vQatRYqRxk5r3dHKtYtm82EG5b5uN'
@@ -30,8 +33,6 @@ listarRelatorioService() {
   .then(this.extractData)
   .catch(this.handleError);
 }
-
-
 
 VerificarLogin(username, senha) {
   this.data = {
