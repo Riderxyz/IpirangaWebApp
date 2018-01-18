@@ -170,7 +170,7 @@ export class ListaBeerCaveComponent implements OnInit {
   relatorioListaFilter() {
     var data = [];
     var application = 3;
-    var reportId = 1;
+    var reportId = 2;
     var year = 0;
     var month = 0;
     var files = [];
@@ -188,34 +188,34 @@ export class ListaBeerCaveComponent implements OnInit {
           if(d.application == application){
             reports = d.reports;
             console.log("REPORTS: ",reports);
+            data.map(d => {
+              years = d.reports;
+              if (reportId == reportId) {
+                years = d.reports[reportId].years;
+                console.log("ANOS: ", years);
+                data.map(d => {
+                  months = d.reports[reportId].years;
+                  if(year == year){
+                    months = d.reports[reportId].years[year].months;
+                    console.log("MESES: ",months);
+                    data.map(d => {
+                      files = d.reports[reportId].years[year].months;
+                      if(file == file){
+                        files = d.reports[reportId].years[year].months[month].files;
+                        this.filesReport = files;
+                      }
+                      console.log("ARQUIVOS: ",files);
+                      console.log("FILES REPORT: ",this.filesReport);
+                    });
+                  }
+                });
+              }
+            });
           }
         });
 
-        data.map(d => {
-          years = d.reports;
-          if (reportId == reportId) {
-            years = d.reports[reportId].years;
-            console.log("ANOS: ", years);
-          }
-        });
 
-        data.map(d => {
-          months = d.reports[reportId].years;
-          if(year == year){
-            months = d.reports[reportId].years[year].months;
-            console.log("MESES: ",months);
-          }
-        });
 
-        data.map(d => {
-          files = d.reports[reportId].years[year].months;
-          if(file == file){
-            files = d.reports[reportId].years[year].months[month].files;
-            this.filesReport = files;
-          }
-          console.log("ARQUIVOS: ",files);
-          console.log("FILES REPORT: ",this.filesReport);
-        });
 
       })
       .catch(err => console.log(err));
