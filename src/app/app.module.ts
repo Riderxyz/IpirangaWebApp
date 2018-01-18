@@ -4,11 +4,11 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//NGX Bootstrap 
+//NGX Bootstrap
   import {
-    BsDropdownModule, 
-    CollapseModule  
-  } from 'ngx-bootstrap'
+    BsDropdownModule,
+    CollapseModule
+  } from 'ngx-bootstrap';
 //Paginas↓
   import { FilterPageComponent } from './Pages/filter-page/filter-page.component';
   import { HistoryPageComponent } from './Pages/history-page/history-page.component';
