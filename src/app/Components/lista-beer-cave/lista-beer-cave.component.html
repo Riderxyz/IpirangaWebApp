@@ -13,7 +13,7 @@
           <mat-form-field>
             <mat-select placeholder="Relatórios">
               <mat-option *ngFor="let item of filesReport" [value]="item">
-                <div  >{{item.file.name}} - {{item.file.urlFile}}</div>
+                <div  >{{item.file.name}} - {{item.file.lastModified}}</div>
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -22,3 +22,4 @@
 
     </mat-expansion-panel>
   </mat-accordion>
+
