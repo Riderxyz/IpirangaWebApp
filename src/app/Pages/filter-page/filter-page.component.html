@@ -1,6 +1,6 @@
 <div>
   <mat-accordion *ngFor="let itemExpand of Array_DatabaseFilters">
-    <mat-expansion-panel hideToggle="true">
+    <mat-expansion-panel hideToggle="true" [expanded]="false"><!-- controle de expansão das abas -->
       <mat-expansion-panel-header (click)="iniciarRotacao(itemExpand)" style="height: 48px;padding-right:  0px;">
         <mat-panel-title class="margintitle">
           <div class="titleExpansion">
