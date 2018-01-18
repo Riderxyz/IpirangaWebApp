@@ -20,6 +20,7 @@ export class ListaBeerCaveComponent implements OnInit {
   AWS_DatabaseDatePicker: any;
   public relatorioService;
   public filesReport = [];
+  AWS_Relatorio = { aplicacao: null, reporte: null, anos: null, meses: null, arquivos:null}
 
   Date_Picker_Model1 = {
     data1: null,
@@ -163,6 +164,7 @@ export class ListaBeerCaveComponent implements OnInit {
       .listarRelatorioService()
       .then(res => {
         this.relatorioService = res;
+        console.log(this.relatorioService.years)
       })
       .catch(err => console.log(err));
   }
@@ -183,36 +185,37 @@ export class ListaBeerCaveComponent implements OnInit {
         var years = [];
         var months = [];
         var file = [];
-
+        //this.AWS_Relatorio.aplicacao
         data.map(d => {
-          if(d.application == application){
-            reports = d.reports;
-            console.log("APPLICATION: ",application);
-            console.log("REPORTS: ",reports);
+          if (d.application == application) {
+            this.AWS_Relatorio.reporte = d.reports;
+            console.log("APPLICATION: ", application);
+            console.log("REPORTS: ",  this.AWS_Relatorio.reporte);
+
+
             data.map(d => {
               years = d.reports;
-              if (reportId == reportId) {
-                years = d.reports[reportId].years;
-                console.log("ANOS: ", years);
-                data.map(d => {
-                  months = d.reports[reportId].years;
-                  if(year == year){
-                    months = d.reports[reportId].years[year].months;
-                    console.log("MESES: ",months);
-                    data.map(d => {
-                      files = d.reports[reportId].years[year].months;
-                      if(file == file){
-                        files = d.reports[reportId].years[year].months[month].files;
-                        this.filesReport = files;
+              this.AWS_Relatorio.anos = d.reports[reportId].years;
+              console.log("ANOS: ", this.AWS_Relatorio.anos);
 
-                      }
-                      console.log("ARQUIVOS: ",files);
-                      console.log("FILES REPORT: ",this.filesReport);
-                    });
-                  }
+
+              data.map(d => {
+                months = d.reports[reportId].years;
+                this.AWS_Relatorio.meses = d.reports[reportId].years[year].months;
+                console.log("MESES: ", this.AWS_Relatorio.meses);
+
+
+                data.map(d => {
+                 // files = d.reports[reportId].years[year].months;
+                  this.AWS_Relatorio.arquivos = d.reports[reportId].years[year].months[month].files;
+                  this.filesReport = files;
+                  console.log("ARQUIVOS: ", this.AWS_Relatorio.arquivos);
+                 // console.log("FILES REPORT: ", this.filesReport);
                 });
               }
-            });
+              );
+            }
+            );
           }
         });
 

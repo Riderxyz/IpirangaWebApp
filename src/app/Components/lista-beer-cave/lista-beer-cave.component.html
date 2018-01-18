@@ -1,24 +1,22 @@
-<mat-accordion *ngFor="let itemExpand of AWS_DatabaseDatePicker">
-    <mat-expansion-panel >
-        <mat-expansion-panel-header >
-          <mat-panel-title >
-            <div>
-              {{itemExpand.titulo}}
+<ul *ngFor="let itemExpand of AWS_DatabaseDatePicker">
+  <li>{{itemExpand.titulo}}
+    <ul>
+      <li *ngFor="let ano of AWS_Relatorio.anos">
+       
+        <ul>
+          <li *ngFor="let mes of AWS_Relatorio.meses">
+
+            <div>{{ano.year}}- {{mes.month}}
+              <ul>
+                <li  *ngFor="let arquivo of AWS_Relatorio.arquivos">
+                  {{arquivo.file.name}}
+                </li>
+              </ul>
             </div>
-          </mat-panel-title>
-        </mat-expansion-panel-header>
 
-        <mat-toolbar-row>
-          <span>
-            <mat-form-field>
-              <mat-select placeholder="Relatórios">
-                <mat-option *ngFor="let item of filesReport" [value]="item">
-                  <div  >{{item.file.name}} - {{item.file.lastModified}}</div>
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-          </span>
-        </mat-toolbar-row>
-
-      </mat-expansion-panel>
-    </mat-accordion>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
