@@ -1,22 +1,22 @@
 <ul *ngFor="let itemExpand of AWS_DatabaseDatePicker">
-  <li>{{itemExpand.titulo}}
-    <ul>
-      <li *ngFor="let ano of AWS_Relatorio.anos">
-       
-        <ul>
-          <li *ngFor="let mes of AWS_Relatorio.meses">
+    <li>{{itemExpand.titulo}}
+      <ul>
+        <li *ngFor="let ano of AWS_Relatorio.anos">
 
-            <div>{{ano.year}}- {{mes.month}}
-              <ul>
-                <li  *ngFor="let arquivo of AWS_Relatorio.arquivos">
-                  {{arquivo.file.name}}   -----   {{arquivo.file.lastModified}}
-                </li>
-              </ul>
-            </div>
+          <ul>
+            <li *ngFor="let mes of AWS_Relatorio.meses">
 
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
+              <div>{{ano.year}}- {{mes.month}}
+                <ul>
+                  <li  *ngFor="let arquivo of AWS_Relatorio.arquivos">
+                    {{arquivo.file.name}}   -----   {{arquivo.file.lastModified}}
+                  </li>
+                </ul>
+              </div>
+
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
