@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //NGX Bootstrap
   import {
+
     BsDropdownModule,
-    CollapseModule
-  } from 'ngx-bootstrap';
+    CollapseModule,
+    TabsModule
+  } from 'ngx-bootstrap'
 //Paginas↓
   import { FilterPageComponent } from './Pages/filter-page/filter-page.component';
   import { HistoryPageComponent } from './Pages/history-page/history-page.component';
@@ -95,6 +97,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Ng's↓
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
+    TabsModule.forRoot(),
 //DatePickers↓
     DpDatePickerModule,
 //AngularMaterial↓
