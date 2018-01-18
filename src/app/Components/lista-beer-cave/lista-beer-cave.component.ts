@@ -20,7 +20,7 @@ export class ListaBeerCaveComponent implements OnInit {
   AWS_DatabaseDatePicker: any;
   public relatorioService;
   public filesReport = [];
-  AWS_Relatorio = { aplicacao: null, reporte: null, anos: null, meses: null, arquivos:null}
+  AWS_Relatorio = { aplicacao: null, reporte: null, anos: null, meses: null, arquivos: null }
 
   Date_Picker_Model1 = {
     data1: null,
@@ -71,7 +71,7 @@ export class ListaBeerCaveComponent implements OnInit {
         titulo: "1. Quantidade de Usuario",
         periodo1: this.Date_Picker_Model1.data1,
         periodo2: this.Date_Picker_Model2.data1,
-        pickerID: "#Picker1",
+        ID: 1,
         Seta: null
       },
 
@@ -79,7 +79,7 @@ export class ListaBeerCaveComponent implements OnInit {
         titulo: "2. Quantidade de publicações por usuario",
         periodo1: this.Date_Picker_Model1.data2,
         periodo2: this.Date_Picker_Model2.data2,
-        pickerID: "#Picker1",
+        ID: 2,
         Seta: null
       },
 
@@ -87,57 +87,56 @@ export class ListaBeerCaveComponent implements OnInit {
         titulo: "3. Quantidade de publicações por perfil",
         periodo1: this.Date_Picker_Model1.data3,
         periodo2: this.Date_Picker_Model2.data3,
-        pickerID: "#Picker1",
+        ID: 3,
         Seta: null
       },
       {
         titulo: "4. Quantidade de visualizações por perfil",
         periodo1: this.Date_Picker_Model1.data4,
         periodo2: this.Date_Picker_Model2.data4,
-        pickerID: "#Picker1",
+        ID: 4,
         Seta: null
       },
       {
         titulo: "5. Quantidade de curtidas por publicação",
         periodo1: this.Date_Picker_Model1.data5,
         periodo2: this.Date_Picker_Model2.data5,
-        pickerID: "#Picker1",
+        ID: 5,
         Seta: null
       },
       {
         titulo: "6. Quantidade de videos assistidos por dia e faixa de horario",
         periodo1: this.Date_Picker_Model1.data6,
         periodo2: this.Date_Picker_Model2.data6,
-        pickerID: "#Picker1",
+        ID: 6,
         Seta: null
       },
       {
         titulo: "7. Quantidade de visualizações por video",
         periodo1: this.Date_Picker_Model1.data7,
         periodo2: this.Date_Picker_Model2.data7,
-        pickerID: "#Picker1",
+        ID: 7,
         Seta: null
       },
       {
         titulo: "8. Quantidade geral de acessos, independente da interação",
         periodo1: this.Date_Picker_Model1.data8,
         periodo2: this.Date_Picker_Model2.data8,
-        pickerID: "#Picker1",
+        ID: 8,
         Seta: null
       },
       {
-        titulo:
-          "9. Quantidade de interações por dia e faixa de horario deas publicações",
+        titulo:"9. Quantidade de interações por dia e faixa de horario deas publicações",
         periodo1: this.Date_Picker_Model1.data9,
         periodo2: this.Date_Picker_Model2.data9,
-        pickerID: "#Picker1",
+        ID: 9,
         Seta: null
       },
       {
         titulo: "10. Geral",
         periodo1: this.Date_Picker_Model1.data9,
         periodo2: this.Date_Picker_Model2.data9,
-        pickerID: "#Picker1",
+        ID: 10,
         Seta: null
       }
     ];
@@ -190,7 +189,7 @@ export class ListaBeerCaveComponent implements OnInit {
           if (d.application == application) {
             this.AWS_Relatorio.reporte = d.reports;
             console.log("APPLICATION: ", application);
-            console.log("REPORTS: ",  this.AWS_Relatorio.reporte);
+            console.log("REPORTS: ", this.AWS_Relatorio.reporte);
 
 
             data.map(d => {
@@ -206,11 +205,11 @@ export class ListaBeerCaveComponent implements OnInit {
 
 
                 data.map(d => {
-                 // files = d.reports[reportId].years[year].months;
+                  // files = d.reports[reportId].years[year].months;
                   this.AWS_Relatorio.arquivos = d.reports[reportId].years[year].months[month].files;
                   this.filesReport = files;
                   console.log("ARQUIVOS: ", this.AWS_Relatorio.arquivos);
-                 // console.log("FILES REPORT: ", this.filesReport);
+                  // console.log("FILES REPORT: ", this.filesReport);
                 });
               }
               );
