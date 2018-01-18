@@ -9,7 +9,6 @@ import {
 import { CacheSrvService } from "./../../Services/CacheSrv/cache-srv.service";
 import { DateAdapter } from "@angular/material";
 import { Input } from "@angular/core/src/metadata/directives";
-import { Relatorio } from "../../Control/relatorioModel";
 @Component({
   selector: "app-lista-beer-cave",
   templateUrl: "./lista-beer-cave.component.html",
