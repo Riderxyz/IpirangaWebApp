@@ -187,6 +187,7 @@ export class ListaBeerCaveComponent implements OnInit {
         data.map(d => {
           if(d.application == application){
             reports = d.reports;
+            console.log("APPLICATION: ",application);
             console.log("REPORTS: ",reports);
             data.map(d => {
               years = d.reports;
@@ -203,6 +204,7 @@ export class ListaBeerCaveComponent implements OnInit {
                       if(file == file){
                         files = d.reports[reportId].years[year].months[month].files;
                         this.filesReport = files;
+
                       }
                       console.log("ARQUIVOS: ",files);
                       console.log("FILES REPORT: ",this.filesReport);
