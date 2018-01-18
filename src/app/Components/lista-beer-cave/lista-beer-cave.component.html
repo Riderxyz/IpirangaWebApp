@@ -9,7 +9,7 @@
             <div>{{ano.year}}- {{mes.month}}
               <ul>
                 <li  *ngFor="let arquivo of AWS_Relatorio.arquivos">
-                  {{arquivo.file.name}}
+                  {{arquivo.file.name}}   -----   {{arquivo.file.lastModified}}
                 </li>
               </ul>
             </div>
