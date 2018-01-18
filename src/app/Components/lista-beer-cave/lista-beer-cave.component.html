@@ -9,7 +9,7 @@
               <div>{{ano.year}}- {{mes.month}}
                 <ul>
                   <li  *ngFor="let arquivo of AWS_Relatorio.arquivos">
-                    {{arquivo.file.name}}   -----   {{arquivo.file.lastModified}}
+                    {{arquivo.file.name | json}} ---- GERADO: {{arquivo.file.lastModified | date:'dd-MM-yyy - HH:mm'}}
                   </li>
                 </ul>
               </div>
