@@ -9,7 +9,6 @@ import {
 import { CacheSrvService } from "./../../Services/CacheSrv/cache-srv.service";
 import { DateAdapter } from "@angular/material";
 import { Input } from "@angular/core/src/metadata/directives";
-import { Relatorio } from "../../Control/relatorioModel";
 @Component({
   selector: "app-lista-beer-cave",
   templateUrl: "./lista-beer-cave.component.html",
@@ -20,6 +19,7 @@ export class ListaBeerCaveComponent implements OnInit {
   AWS_DatabaseDropdown: any;
   AWS_DatabaseDatePicker: any;
   public relatorioService;
+  public filesReport = [];
 
   Date_Picker_Model1 = {
     data1: null,
@@ -170,7 +170,7 @@ export class ListaBeerCaveComponent implements OnInit {
   relatorioListaFilter() {
     var data = [];
     var application = 3;
-    var reportId = 1;
+    var reportId = 2;
     var year = 0;
     var month = 0;
     var files = [];
@@ -187,33 +187,37 @@ export class ListaBeerCaveComponent implements OnInit {
         data.map(d => {
           if(d.application == application){
             reports = d.reports;
+            console.log("APPLICATION: ",application);
             console.log("REPORTS: ",reports);
+            data.map(d => {
+              years = d.reports;
+              if (reportId == reportId) {
+                years = d.reports[reportId].years;
+                console.log("ANOS: ", years);
+                data.map(d => {
+                  months = d.reports[reportId].years;
+                  if(year == year){
+                    months = d.reports[reportId].years[year].months;
+                    console.log("MESES: ",months);
+                    data.map(d => {
+                      files = d.reports[reportId].years[year].months;
+                      if(file == file){
+                        files = d.reports[reportId].years[year].months[month].files;
+                        this.filesReport = files;
+
+                      }
+                      console.log("ARQUIVOS: ",files);
+                      console.log("FILES REPORT: ",this.filesReport);
+                    });
+                  }
+                });
+              }
+            });
           }
         });
 
-        data.map(d => {
-          years = d.reports;
-          if (reportId == reportId) {
-            years = d.reports[reportId].years;
-            console.log("ANOS: ", years);
-          }
-        });
 
-        data.map(d => {
-          months = d.reports[reportId].years;
-          if(year == year){
-            months = d.reports[reportId].years[year].months;
-            console.log("MESES: ",months);
-          }
-        });
 
-        data.map(d => {
-          files = d.reports[reportId].years[year].months;
-          if(file == file){
-            files = d.reports[reportId].years[year].months[month].files;
-          }
-          console.log("ARQUIVOS: ",files);
-        });
 
       })
       .catch(err => console.log(err));
