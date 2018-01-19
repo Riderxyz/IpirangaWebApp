@@ -9,7 +9,7 @@
 
               <div>{{ano.year}}- {{mes.month}}
                 <ul>
-                  <li *ngFor="let arquivo of AWS_Relatorio.arquivos" (click)="iniciarRotacao(rs)">
+                  <li *ngFor="let arquivo of AWS_Relatorio.arquivos" (click)="iniciarRotacao(omega)">
                     {{arquivo.file.name | json}} ---- GERADO: {{arquivo.file.lastModified | date:'dd-MM-yyy - HH:mm'}}
                   </li>
                 </ul>
