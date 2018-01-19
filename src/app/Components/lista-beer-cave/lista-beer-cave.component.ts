@@ -155,9 +155,12 @@ export class ListaBeerCaveComponent implements OnInit {
     relatorioID = this.AWS_Relatorio.reporte[Titulo.ID - 1].reportId;
     if (Titulo.ID == relatorioID) {
       console.log('FUNCIONA =>  relatorioID:', relatorioID, ' = TITULO.ID: ', Titulo.ID);
-      // if (Titulo relatorioID) {
-        
-      // }
+      var ano = relatorioID.years[Titulo.ID - 1].year;
+        if (ano = this.AWS_Relatorio.anos[Titulo.ID].year) { // tentar a partir daqui - logica, comparar o dado de "ano" de Titulo, que não possui essa informação, com ano de AWS_Relatorio.
+          console.log('Ano bate');
+        }else{
+          console.log('Dado para ano não resolve');
+        }
     }else{
       console.log('ERRO EM - relatorioID.reportId');
     }
