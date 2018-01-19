@@ -62,6 +62,7 @@ import { DpDatePickerModule } from "ng2-date-picker";
 //PrimeNG
 import { TreeModule } from "primeng/tree";
 import { TreeNode } from "primeng/api";
+import {ButtonModule} from 'primeng/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,6 +88,7 @@ import { TreeNode } from "primeng/api";
   imports: [
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
   //Ng's↓
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
@@ -123,8 +125,9 @@ import { TreeNode } from "primeng/api";
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
+  //Bootstrap
+    ButtonModule,
   //Http↓
-    BrowserAnimationsModule,
     HttpClientModule,
     HttpModule,
     AppRoutingModule
