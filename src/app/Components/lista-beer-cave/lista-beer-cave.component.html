@@ -1,4 +1,5 @@
-<ul *ngFor="let itemExpand of AWS_DatabaseDatePicker">
+<div *ngFor="let Omega of relatorioService">
+  <ul *ngFor="let itemExpand of AWS_DatabaseDatePicker" (click)="iniciarRotacao(itemExpand, Omega)">
     <li>{{itemExpand.titulo}}
       <ul>
         <li *ngFor="let ano of AWS_Relatorio.anos">
@@ -8,7 +9,7 @@
 
               <div>{{ano.year}}- {{mes.month}}
                 <ul>
-                  <li  *ngFor="let arquivo of AWS_Relatorio.arquivos">
+                  <li *ngFor="let arquivo of AWS_Relatorio.arquivos" (click)="iniciarRotacao(rs)">
                     {{arquivo.file.name | json}} ---- GERADO: {{arquivo.file.lastModified | date:'dd-MM-yyy - HH:mm'}}
                   </li>
                 </ul>
@@ -20,3 +21,4 @@
       </ul>
     </li>
   </ul>
+</div>
