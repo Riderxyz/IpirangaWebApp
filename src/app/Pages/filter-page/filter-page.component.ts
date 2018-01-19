@@ -223,7 +223,6 @@ export class FilterPageComponent implements OnInit {
     console.log(item)
     this.model = item.viewValue
     console.log(this.model)
-    
   }
   Ativar(relatorio) {
     //this.DynamoServiceData.Aplication = 

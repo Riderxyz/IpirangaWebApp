@@ -62,11 +62,10 @@ export class AmazonSrvService {
     return new RequestOptions({ headers: headerGenerateRelatorio });
   }
 
-  GerarRelatorio(){
-    
+  GerarRelatorio(){ 
     //reportId
     //application
-    return this.http.get(this.linkGenerateRelatorio, this.headerSetRelatorio())
+    return this.http.post(this.linkGenerateRelatorio, this.headerSetRelatorio())
     .toPromise()
     .then(this.extractData)
     .catch(this.handleError)
