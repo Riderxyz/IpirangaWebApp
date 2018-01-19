@@ -1,3 +1,4 @@
+import { AmazonSrvService } from './../../Services/AmazonSrv/amazon-srv.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CacheSrvService } from './../../Services/CacheSrv/cache-srv.service';
 import { DatePickerComponent } from 'ng2-date-picker';
@@ -20,13 +21,15 @@ export class FilterPageComponent implements OnInit {
   model: any
   DynamoServiceData = {Aplication:null, StartDate:null, EndDate:null}
   Logado: boolean = false
+  Selected: any;
   @ViewChild('dayPicker') DatePicker_de_Inicio: DatePickerComponent;
   @ViewChild('dayPicker2') DatePicker_de_Fim: DatePickerComponent;
 
 
-  constructor(public cacheSrv: CacheSrvService) {
+  constructor(public cacheSrv: CacheSrvService,public AWS_Srv: AmazonSrvService) {
     //dateAdapter.setLocale('en-in')
     this.itemDabase()
+    
   }
 
   ngOnInit() {
@@ -220,11 +223,14 @@ export class FilterPageComponent implements OnInit {
     console.log(item)
     this.model = item.viewValue
     console.log(this.model)
+    
   }
-  Ativar(relatorio, aplicacao) {
+  Ativar(relatorio) {
     //this.DynamoServiceData.Aplication = 
     console.log(relatorio)
-    console.log(aplicacao)
+    //console.log(aplicacao)
+    this.AWS_Srv.GerarRelatorio()
+    console.log('AQUI ESTA O NGMODEL',this.DynamoServiceData.Aplication)
     console.log(/*this.Date_Picker_Model*/)
   }
 

@@ -1,1 +1,6 @@
 <button pButton type="button" label="RISE! RAPTURE RISE!!" ></button>
+<div>
+<h3 class="first">Single</h3>
+<p-dropdown [options]="Array_DatabaseApps" [(ngModel)]="Selected" placeholder="Select a City" optionLabel="viewValue"></p-dropdown>
+<p>Selected City: {{Selected ? Selected.value : 'none' }}</p>
+</div>
