@@ -59,16 +59,6 @@ import {
 import { CdkTableModule } from "@angular/cdk/table";
 //DatePickers↓
 import { DpDatePickerModule } from "ng2-date-picker";
-
-//Angular tree↓
-import { TreeModule } from "angular-tree-component";
-import {
-  TREE_ACTIONS,
-  KEYS,
-  IActionMapping,
-  ITreeOptions
-} from "angular-tree-component";
-
 //PrimeNG
 import { TreeModule } from "primeng/tree";
 import { TreeNode } from "primeng/api";
@@ -97,13 +87,13 @@ import { TreeNode } from "primeng/api";
   imports: [
     BrowserModule,
     FormsModule,
-    //Ng's↓
+  //Ng's↓
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
     TabsModule.forRoot(),
-    //DatePickers↓
+  //DatePickers↓
     DpDatePickerModule,
-    //AngularMaterial↓
+  //AngularMaterial↓
     CdkTableModule,
     MatAutocompleteModule,
     MatButtonModule,
@@ -133,9 +123,7 @@ import { TreeNode } from "primeng/api";
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    //Tree↓
-    TreeModule,
-    //Http↓
+  //Http↓
     BrowserAnimationsModule,
     HttpClientModule,
     HttpModule,
