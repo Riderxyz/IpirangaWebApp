@@ -42,3 +42,5 @@ testem.log
 Thumbs.db
 fabric8-analytics.log
 package-lock.json
+.vscode/extensions.json
+.vscode/settings.json
