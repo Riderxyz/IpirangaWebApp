@@ -130,6 +130,8 @@ import {DropdownModule} from 'primeng/dropdown';
   //PrimeNG↓
     ButtonModule,
     DropdownModule,
+    TreeNode,
+    TreeNode,
   //Http↓
     HttpClientModule,
     HttpModule,
