@@ -15,10 +15,19 @@
 <!--DropDown dos Apps-->
 <div class="form-group dropdownArrow newSelect">
     <label for="DropDownApps">Aplicativo</label>
-    <select class="form-control" id="DropDownApps">
-      <option *ngFor="let item of  Array_DatabaseApps">{{item.viewValue}}</option>
+    <select  [(ngModel)]="DynamoServiceData.Aplication" class="form-control" id="DropDownApps">
+      <option (click)="Ativar(item)" *ngFor="let item of  Array_DatabaseApps">{{item.viewValue}}</option>
     </select>
   </div>
+
+<!--   <div dropdownArrow newSelect>
+      <label for="DropDownApps">Single</label>
+      <br>
+      <p-dropdown [options]="Array_DatabaseApps" [(ngModel)]="Selected" placeholder="Aplicativo" optionLabel="viewValue"></p-dropdown>
+      </div> -->
+
+
+
         </span>
 <!--DatePickers-->
         <span class="spanDate" *ngIf="itemExpand.MostrarData">
@@ -54,7 +63,7 @@
 
             
 <!--DropDown dos Mes de Referencia-->
-          <div class="form-group dropdownArrow newSelect" *ngIf="itemExpand.MostrarAcao">
+          <div class="form-group dropdownArrow newSelect" *ngIf="itemExpand.MostrarReferencia">
               <label for="DropDownPerfil">Mes de Referencia</label>
               <select class="form-control" id="DropDownPerfil">
                 <option *ngFor="let item of  Array_DatabaseMesRef">{{item.viewValue}}</option>
