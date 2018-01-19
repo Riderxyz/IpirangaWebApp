@@ -20,7 +20,7 @@ export class ListaBeerCaveComponent implements OnInit {
   AWS_DatabaseDatePicker: any;
   public relatorioService;
   public filesReport = [];
-  AWS_Relatorio = { aplicacao: null, reporte: null, anos: null, meses: null, arquivos: null }
+  AWS_Relatorio = { aplicacao: null, reporte: null, anos: null, meses: null, arquivos: null };
 
   Date_Picker_Model1 = {
     data1: null,
@@ -60,7 +60,7 @@ export class ListaBeerCaveComponent implements OnInit {
     this.relatorioListaFilter();
 
     setTimeout(() => {
-      console.log('TALVEZ AS RESPOSATS  ', this.relatorioService)
+      console.log('RESPOSTA RELATORIO SERVICE:  ', this.relatorioService)
     }, 6000);
 
   }
@@ -74,7 +74,7 @@ export class ListaBeerCaveComponent implements OnInit {
     this.AWS_DatabaseDatePicker = [
       {
         titulo: "1. Quantidade de Usuario",
-        periodo1: this.Date_Picker_Model1.data1,
+        periodo1: this.AWS_Relatorio.anos,
         periodo2: this.Date_Picker_Model2.data1,
         ID: "1",
         Seta: null
@@ -148,18 +148,18 @@ export class ListaBeerCaveComponent implements OnInit {
   }
   iniciarRotacao(Titulo, relatorioID) {
     //this.relatoriosLista();
-    console.log(Titulo);
-    console.log(relatorioID)
-    console.log(this.AWS_Relatorio.reporte[Titulo.ID - 1])
+    console.log('OBJ TITULO: ',Titulo);
+    console.log('OBJ RELATORIO: ',relatorioID)
+    console.log('VALOR A PARTIR DE RELATORIOID: ',this.AWS_Relatorio.reporte[Titulo.ID - 1]);
     //Titulo = Titulo.ID
-    relatorioID = this.AWS_Relatorio.reporte[Titulo.ID - 1].reportId
+    relatorioID = this.AWS_Relatorio.reporte[Titulo.ID - 1].reportId;
     if (Titulo.ID == relatorioID) {
-      console.log('FUNCINA',relatorioID)
-      if (relatorioID) {
+      console.log('FUNCIONA =>  relatorioID:', relatorioID, ' = TITULO.ID: ', Titulo.ID);
+      // if (Titulo relatorioID) {
         
-      }
+      // }
     }else{
-      console.log('TENTE DNV',relatorioID.reportId)
+      console.log('ERRO EM - relatorioID.reportId');
     }
 
 
