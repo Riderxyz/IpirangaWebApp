@@ -18,6 +18,7 @@ export class FilterPageComponent implements OnInit {
   Date_Picker_Model1 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   Date_Picker_Model2 = { data1: null, data2: null, data3: null, data4: null, data5: null, data6: null, data7: null, data8: null, data9: null, }
   model: any
+  DynamoServiceData = {Aplication:null, StartDate:null, EndDate:null}
   Logado: boolean = false
   @ViewChild('dayPicker') DatePicker_de_Inicio: DatePickerComponent;
   @ViewChild('dayPicker2') DatePicker_de_Fim: DatePickerComponent;
@@ -220,9 +221,10 @@ export class FilterPageComponent implements OnInit {
     this.model = item.viewValue
     console.log(this.model)
   }
-  Ativar(item) {
-    console.log(item.value)
-    console.log(item.periodo1._d)
+  Ativar(relatorio, aplicacao) {
+    //this.DynamoServiceData.Aplication = 
+    console.log(relatorio)
+    console.log(aplicacao)
     console.log(/*this.Date_Picker_Model*/)
   }
 
