@@ -58,6 +58,11 @@ export class ListaBeerCaveComponent implements OnInit {
   ngOnInit(): void {
     this.relatoriosLista();
     this.relatorioListaFilter();
+
+    setTimeout(() => {
+      console.log('TALVEZ AS RESPOSATS  ', this.relatorioService)
+    }, 6000);
+
   }
   itemDabase() {
     this.AWS_DatabaseDropdown = [
@@ -71,7 +76,7 @@ export class ListaBeerCaveComponent implements OnInit {
         titulo: "1. Quantidade de Usuario",
         periodo1: this.Date_Picker_Model1.data1,
         periodo2: this.Date_Picker_Model2.data1,
-        ID: 1,
+        ID: "1",
         Seta: null
       },
 
@@ -126,7 +131,7 @@ export class ListaBeerCaveComponent implements OnInit {
         Seta: null
       },
       {
-        titulo:"9. Quantidade de interações por dia e faixa de horario deas publicações",
+        titulo: "9. Quantidade de interações por dia e faixa de horario deas publicações",
         periodo1: this.Date_Picker_Model1.data9,
         periodo2: this.Date_Picker_Model2.data9,
         ID: 9,
@@ -141,21 +146,27 @@ export class ListaBeerCaveComponent implements OnInit {
       }
     ];
   }
-  iniciarRotacao() {
-    console.log(this.iconchange);
-
-    if (this.iconchange == null || this.iconchange == "rotateToClose") {
-      this.iconchange = "rotateToOpen";
-    } else {
-      if (this.iconchange == "rotateToOpen") {
-        this.iconchange = "rotateToClose";
+  iniciarRotacao(Titulo, relatorioID) {
+    //this.relatoriosLista();
+    console.log(Titulo);
+    console.log(relatorioID)
+    console.log(this.AWS_Relatorio.reporte[Titulo.ID - 1])
+    //Titulo = Titulo.ID
+    relatorioID = this.AWS_Relatorio.reporte[Titulo.ID - 1].reportId
+    if (Titulo.ID == relatorioID) {
+      console.log('FUNCINA',relatorioID)
+      if (relatorioID) {
+        
       }
+    }else{
+      console.log('TENTE DNV',relatorioID.reportId)
     }
-    console.log(this.iconchange);
+
+
   }
 
   Ativar(item) {
-    console.log(item.value);
+    console.log(item);
     console.log(/*this.Date_Picker_Model*/);
   }
   relatoriosLista() {
