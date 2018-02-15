@@ -193,7 +193,6 @@ export class FilterPageComponent implements OnInit {
 
     ]
   }
-
   iniciarRotacao(item) {
     console.log('Ativação da seta', item.Seta);
 
@@ -206,8 +205,6 @@ export class FilterPageComponent implements OnInit {
     }
 
   }
-
-
   open(date) {
     console.log('SENDO CLICADO!', date)
     if (date == 1) {
@@ -218,7 +215,6 @@ export class FilterPageComponent implements OnInit {
     }
 
   }
-
   teste(item) {
     console.log(item)
     this.model = item.viewValue
@@ -232,5 +228,4 @@ export class FilterPageComponent implements OnInit {
     console.log('AQUI ESTA O NGMODEL',this.DynamoServiceData.Aplication)
     console.log(/*this.Date_Picker_Model*/)
   }
-
 }
